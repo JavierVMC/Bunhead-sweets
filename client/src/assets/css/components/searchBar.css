@@ -1,0 +1,23 @@
+#searchBar {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  margin: 1em 0;
+  border: 1 px solid;
+}
+
+#searchBar button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #000;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+}
+
+#searchBar button:hover {
+  background-color: #ecddd6;
+}
+
+#searchBar button:active {
+  background-color: #d8cbc5;
+}

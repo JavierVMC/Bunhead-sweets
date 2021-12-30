@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "image": "./img/team/JavierVega.jpg",
+        "name": "Javier Vega Molina",
+        "carrier": "Ingeniero en computacion",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie lacus vel ipsum commodo placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque arcu purus, vulputate in ultricies non, pharetra vitae nulla. Sed vel purus ipsum. " 
+    },
+    {
+        "id": 2,
+        "image": "./img/team/FabrizzioOntaneda.jpg",
+        "name": "Fabrizzio Ontaneda",
+        "carrier": "Ingeniero en computacion",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie lacus vel ipsum commodo placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque arcu purus, vulputate in ultricies non, pharetra vitae nulla. Sed vel purus ipsum. " 
+    },
+    {
+        "id": 3,
+        "image": "./img/team/NataliaRamirez.jpg",
+        "name": "Natalia Ramirez",
+        "carrier": "Ingeniera en computacion",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie lacus vel ipsum commodo placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque arcu purus, vulputate in ultricies non, pharetra vitae nulla. Sed vel purus ipsum. " 
+    },
+    {
+        "id": 4,
+        "image": "./img/team/AaronFranco.jpg",
+        "name": "Aaron Franco",
+        "carrier": "Ingeniero en computacion",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie lacus vel ipsum commodo placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque arcu purus, vulputate in ultricies non, pharetra vitae nulla. Sed vel purus ipsum. " 
+    }
+]

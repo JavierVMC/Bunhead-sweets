@@ -1,0 +1,52 @@
+:root {
+  --colorOscuro: #ff9292;
+  --colorClaro: #fff4ef;
+  --colorButtonHover: #ba5f5f;
+  --colorButtonActive: #a55555;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* COMPONENTS */
+@import url(./assets/css/components/product.css);
+@import url(./assets/css/components/intro.css);
+@import url(./assets/css/components/member.css);
+@import url(./assets/css/components/contactForm.css);
+@import url(./assets/css/components/mapLocation.css);
+@import url(./assets/css/components/checkbox.css);
+@import url(./assets/css/components/registrationForm.css);
+@import url(./assets//css/components/loginForm.css);
+@import url(./assets/css/components/newsPreview.css);
+@import url(./assets/css/components/searchBar.css);
+@import url(./assets/css/components/verticalLinearStepper.css);
+@import url(./assets/css/components/userInfo.css);
+@import url(./assets/css/components/bill.css);
+
+/* PARTS */
+@import url(./assets/css/parts/formSection.css);
+@import url(./assets/css/parts/mapSection.css);
+@import url(./assets/css/parts/filters.css);
+
+/* PAGES */
+
+@import url(./assets/css/pages/home.css);
+@import url(./assets/css/pages/shop.css);
+@import url(./assets/css/pages/ourTeam.css);
+@import url(./assets/css/pages/contactUs.css);
+@import url(./assets/css/pages/profile.css);
+@import url(./assets/css/pages/cart.css);
+@import url(./assets/css/pages/registration.css);
+@import url(./assets/css/pages/login.css);
+@import url(./assets/css/pages/news.css);

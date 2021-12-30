@@ -1,0 +1,21 @@
+.outer-container{
+    color: #000;
+    padding: 25px 0 0 100px;
+}
+
+.bill-container{
+    background-color: #ffece3;
+    border: 5px solid #FF9292;
+    border-style: dotted;
+    padding: 15px 15px 15px 15px;
+
+}
+
+.bill-container > span{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.bill-container > ul {
+    font-size: medium;
+}

@@ -1,0 +1,55 @@
+.proceso-stepper {
+  margin: 3em 0 !important;
+  padding-bottom: 10em;
+  display: flex;
+  justify-content: center;
+}
+
+div[class="MuiBox-root css-16r9pk3"] {
+  margin: 0 auto;
+}
+
+.proceso-stepper span {
+  font-size: 1.2em;
+}
+
+.proceso-stepper p {
+  font-size: 1em;
+}
+
+.proceso-stepper circle {
+  color: var(--colorClaro);
+}
+.proceso-stepper text {
+  color: var(--colorOscuro);
+}
+
+button[class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-1f5ro5o-MuiButtonBase-root-MuiButton-root"]{
+  color: var(--colorOscuro);
+  background-color: var(--colorClaro);
+}
+button[class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-1f5ro5o-MuiButtonBase-root-MuiButton-root"]:hover{
+  color: var(--colorClaro);
+  background-color: var(--colorButtonHover);
+
+}
+button[class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-18st3fs-MuiButtonBase-root-MuiButton-root"]{
+  color: var(--colorClaro);
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed{
+   color: var(--colorClaro) !important; 
+}
+
+
+span[class="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"] {
+  font-size: 0.5em;
+}
+
+#pasosCompra{
+  text-align: center;
+}
+
+.css-1di5t78-MuiPaper-root{
+  background: none !important;
+}

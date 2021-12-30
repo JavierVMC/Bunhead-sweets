@@ -1,0 +1,7 @@
+div#home {
+  background-color: var(--colorOscuro);
+}
+
+#menu.navbar-default {
+  width: 100vw;
+}

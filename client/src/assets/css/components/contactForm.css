@@ -1,0 +1,83 @@
+form#contactForm {
+  max-width: 500px;
+  margin: 0 auto !important;
+}
+
+form#contactForm div {
+  padding: 0;
+  padding-right: 30px;
+  margin-bottom: 50px;
+}
+
+form#contactForm input,
+form#contactForm textarea,
+form#contactForm select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  background: none;
+  border: none;
+  border-bottom: var(--colorOscuro) solid 1px;
+}
+
+form#contactForm button {
+  background-color: var(--colorOscuro);
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+}
+
+form#contactForm button:hover {
+  color: var(--colorOscuro);
+  background-color: var(--colorClaro);
+}
+
+form#contactForm button:active {
+  outline: none;
+  border: var(--colorOscuro) solid 2px;
+  background-color: #000;
+}
+
+form#contactForm option {
+  background-color: #000;
+  border: none;
+}
+
+form#contactForm input:focus,
+form#contactForm textarea:focus,
+form#contactForm select:focus {
+  outline: none;
+  border-bottom: var(--colorOscuro) solid 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+  background-color: var(--colorOscuro);
+  border-radius: 2px;
+}
+
+form#contactForm input#newMessage {
+  padding: 0;
+  border: none;
+  color: var(--colorOscuro);
+}
+
+@media only screen and (max-width: 600px) {
+  form#contactForm div {
+    padding: 0;
+  }
+  form#contactForm {
+    padding: 0 10px;
+  }
+}
+
+.button-disabled {
+  color: rgb(168, 168, 168);
+  background-color: rgb(216, 216, 216) !important;
+}
+
+.button-disabled:hover {
+  color: rgb(168, 168, 168) !important;
+  background-color: rgb(216, 216, 216) !important;
+}

@@ -1,0 +1,10 @@
+div#mapSection {
+  width: 100vw;
+  text-align: center;
+  color: var(--colorOscuro);
+  padding: 50px 0;
+}
+
+div#mapSection h1 {
+  margin-bottom: 40px;
+}

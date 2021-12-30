@@ -1,0 +1,20 @@
+.product {
+  color: #000;
+}
+
+.product div {
+  padding-bottom: 20px;
+}
+
+.product hr {
+  width: 100%;
+  background-color: #ff9292;
+}
+
+.product p.price {
+  font-size: large;
+}
+
+.product img {
+  width: 100%;
+}

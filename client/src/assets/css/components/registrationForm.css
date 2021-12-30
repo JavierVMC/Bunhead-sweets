@@ -1,0 +1,90 @@
+#registrationForm {
+  max-width: 500px;
+  margin: 0;
+  padding: 0;
+}
+
+#registrationForm div {
+  padding: 0;
+  margin-bottom: 2em;
+}
+
+#registrationForm div:first-of-type {
+  padding-right: 1.5em;
+}
+
+#registrationForm div:last-of-type {
+  margin: 0;
+}
+
+#registrationForm label {
+  color: #555;
+  font-size: 16px;
+}
+
+#registrationForm input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  background: none;
+  border: none;
+  color: #555;
+  border-bottom: var(--colorOscuro) solid 1px;
+}
+
+#registrationForm button {
+  background-color: var(--colorOscuro);
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#registrationForm button:hover {
+  background-color: var(--colorButtonHover);
+}
+
+#registrationForm button:active {
+  outline: none;
+  background-color: var(--colorButtonActive);
+}
+
+#registrationForm input:focus {
+  outline: none;
+}
+
+.country,
+.city {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.country {
+  padding-right: 1.5em !important;
+}
+
+#country,
+#city {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: #555;
+}
+
+#country:focus,
+#city:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  #registrationForm div {
+    padding: 0;
+  }
+  #registrationForm {
+    padding: 0 10px;
+  }
+  #registrationForm div:first-of-type {
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,44 @@
+[
+    {
+        "image": "img/products/cake2.jpg",
+        "name": "Torta de vainilla",
+        "category": "Torta",
+        "price": 10.00,
+        "description": "Torta mojada de vainilla"
+    },
+    {
+        "image": "img/products/brownies.jpg",
+        "name": "Brownie",
+        "category": "Brownie",
+        "price": 1.00,
+        "description": "Brownie de chocolate"
+    },
+    {
+        "image": "img/products/cake.jpg",
+        "name": "Torta de chocolate",
+        "category": "Torta",
+        "price": 12.00,
+        "description": "Torta mojada de chocolate"
+    },
+    {
+        "image": "img/products/cookies.jpg",
+        "name": "Galletas",
+        "category": "Galletas",
+        "price": 0.50,
+        "description": "Galletas alargadas cobiertas con azucar"
+    },
+    {
+        "image": "img/products/cupcake.jpg",
+        "name": "Cupcake de vainilla",
+        "category": "Cupcake",
+        "price": 2.00,
+        "description": "Cupcake de vainilla"
+    },
+    {
+        "image": "img/products/cupcake2.jpg",
+        "name": "Cupcake de chocolate",
+        "category": "Cupcake",
+        "price": 2.50,
+        "description": "Cupcake de chocolate"
+    }
+]

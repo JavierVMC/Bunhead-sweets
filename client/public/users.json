@@ -1,0 +1,60 @@
+[
+    {
+        "admin": true,
+        "firstname": "Javier",
+        "lastname": "Vega",
+        "address": "Florida norte",
+        "email": "javavega@espol.edu.ec",
+        "password": "123",
+        "image": "img/users/JavierVega.jpg",
+        "cart": [    {
+            "image": "img/products/brownies.jpg",
+            "name": "Brownie",
+            "category": "Brownie",
+            "price": 1.00,
+            "description": "Brownie de chocolate"
+        },    {
+            "image": "img/products/brownies.jpg",
+            "name": "Brownie",
+            "category": "Brownie",
+            "price": 1.00,
+            "description": "Brownie de chocolate"
+        },    {
+            "image": "img/products/brownies.jpg",
+            "name": "Brownie",
+            "category": "Brownie",
+            "price": 1.00,
+            "description": "Brownie de chocolate"
+        }]
+    },
+    {
+        "admin": false,
+        "firstname": "Fabrizzio",
+        "lastname": "Ontaneda",
+        "address": "Sauces",
+        "email": "faontane@espol.edu.ec",
+        "password": "xd",
+        "image": "img/users/FabrizzioOntaneda.jpg",
+        "cart": []
+    },
+    {
+        "admin": false,
+        "firstname": "Aaron",
+        "lastname": "Franco",
+        "address": "Villa club",
+        "email": "aaalfran@espol.edu.ec",
+        "password": "123",
+        "image": "img/users/AaronFranco.jpg",
+        "cart": []
+    },
+    {
+        "admin": false,
+        "firstname": "Natalia",
+        "lastname": "Ramirez",
+        "address": "Samborondon",
+        "email": "natroram@espol.edu.ec",
+        "password": "123",
+        "image": "img/users/NataliaRamirez.jpg",
+        "cart": []
+    }
+]

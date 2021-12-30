@@ -1,0 +1,39 @@
+@media screen and (max-width: 400px) {
+  #features {
+    padding: 20px;
+    width: 100vw;
+  }
+  #about,
+  #services,
+  #testimonials,
+  #team,
+  #contact,
+  #footer {
+    width: 100vw;
+  }
+
+  #portfolio,
+  #intro,
+  .intro div {
+    max-width: 100vw !important;
+  }
+
+  .intro-text {
+    text-align: center !important;
+    padding: 200px 0 !important;
+  }
+
+  .intro-text h1 {
+    font-size: 2em;
+  }
+
+  #about {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  #about img {
+    max-width: 150px;
+    margin: 0 auto;
+  }
+}
