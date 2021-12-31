@@ -1,10 +1,10 @@
-import React from "react";
-import { About } from "../../components/about";
-import { Gallery } from "../../components/gallery";
-import JsonData from "../../data/data.json";
-import { useState, useEffect } from "react";
-import Intro from "../../components/Intro";
-import VerticalLinearStepper from "../../components/VerticalLinearStepper";
+import React from 'react';
+import { About } from '../../components/about/about';
+import { Gallery } from '../../components/gallery/gallery';
+import JsonData from '../../data/data.json';
+import { useState, useEffect } from 'react';
+import Intro from '../../components/intro/Intro';
+import VerticalLinearStepper from '../../components/vertical_stepper/VerticalLinearStepper';
 
 const Home = () => {
   const [landingPageData, setLandingPageData] = useState({});

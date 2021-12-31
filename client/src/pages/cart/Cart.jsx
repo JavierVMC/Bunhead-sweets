@@ -1,7 +1,7 @@
-import ShoppingList from "./parts/ShoppingList";
-import { SplitScreen } from "../../components/SplitScreen";
-import { Bill } from "./parts/Bill";
-import { ResourceLoader } from "../../components/ResourceLoader";
+import ShoppingList from './components/shopping_list/ShoppingList';
+import { SplitScreen } from '../../components/split_screen/SplitScreen';
+import { Bill } from './components/bill/Bill';
+import { ResourceLoader } from '../../components/resource_loader/ResourceLoader';
 
 const Cart = () => {
   return (

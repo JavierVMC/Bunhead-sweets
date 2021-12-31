@@ -1,5 +1,5 @@
-import FormSection from "./parts/FormSection";
-import MapSection from "./parts/MapSection";
+import FormSection from './components/form_section/FormSection';
+import MapSection from './components/map_section/MapSection';
 
 const ContactUs = () => {
   return (

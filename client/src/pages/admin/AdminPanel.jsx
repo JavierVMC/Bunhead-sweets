@@ -1,4 +1,4 @@
-import { Graph } from "../../components/Graph";
+import { Graph } from '../../components/graph/Graph';
 
 export const AdminPanel = () => {
   return (

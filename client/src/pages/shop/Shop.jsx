@@ -1,8 +1,8 @@
-import ProductList from "./parts/ProductList";
-import { SplitScreen } from "../../components/SplitScreen";
-import { Filters } from "./parts/Filters";
-import ResourceProductsLoader from "../../components/ResourceProductsLoader";
-import { useRef, useEffect } from "react";
+import ProductList from './components/product_list/ProductList';
+import { SplitScreen } from '../../components/split_screen/SplitScreen';
+import { Filters } from './components/filters/Filters';
+import ResourceProductsLoader from '../../components/resource_products_loader/ResourceProductsLoader';
+import { useRef, useEffect } from 'react';
 
 export const Shop = () => {
   const isMountedRef = useRef(true);

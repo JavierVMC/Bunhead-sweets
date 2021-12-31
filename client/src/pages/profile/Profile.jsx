@@ -1,5 +1,5 @@
-import UserInfo from "../../components/UserInfo";
-import { ResourceLoader } from "../../components/ResourceLoader";
+import UserInfo from '../../components/user_info/UserInfo';
+import { ResourceLoader } from '../../components/resource_loader/ResourceLoader';
 
 export const Profile = () => {
   return (

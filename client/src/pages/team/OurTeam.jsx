@@ -1,4 +1,4 @@
-import TeamMembers from "./parts/TeamMembers";
+import TeamMembers from './components/team_members/TeamMembers';
 
 const OurTeam = () => {
   return (
