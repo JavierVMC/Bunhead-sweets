@@ -8,35 +8,29 @@ export const RegistrationForm = () => {
     e.preventDefault();
 
     const newUser = {
-      firstname: document.querySelector('#firstname').value,
-      lastname: document.querySelector('#lastname').value,
+      first_name: document.querySelector('#firstname').value,
+      last_name: document.querySelector('#lastname').value,
       phone: document.querySelector('#phone').value,
       country: document.querySelector('#country').value,
       city: document.querySelector('#city').value,
       street: document.querySelector('#address').value,
-      email: document.querySelector('#email').value,
+      user_email: document.querySelector('#email').value,
       password: document.querySelector('#password').value,
       is_admin: false
     };
 
-    const response = postData('http://localhost:3001/api/user', newUser).then(
-      (data) => {
-        console.log(data);
-      }
+    const users = await getData(
+      `http://localhost:3001/api/user/${newUser.user_email}`
     );
-
-    console.log(response);
-    window.location.href = 'http://localhost:3000/login';
-  };
-
-  const checkAvailability = () => {
-    const email = document.querySelector('#email').value;
-    const response = getData(`http://localhost:3001/api/user/${email}`);
-    console.log(response);
-    if (response.lengh > 0) {
+    console.log(users);
+    if (users.length !== 0) {
       setEmailAvailable(false);
     } else {
       setEmailAvailable(true);
+      postData('http://localhost:3001/api/user', newUser).then((data) => {
+        console.log(data);
+      });
+      window.location.href = 'http://localhost:3000/login';
     }
   };
 
@@ -104,7 +98,6 @@ export const RegistrationForm = () => {
           name="email"
           type="email"
           placeholder="Correo electrónico*"
-          onChange={checkAvailability}
           required
         ></input>
         {!emailAvailable ? (

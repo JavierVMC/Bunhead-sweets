@@ -5,6 +5,7 @@ import { userHasLoggedIn } from '../../actions';
 import { currentUserLogin } from '../../actions';
 import { admin } from '../../actions';
 import { useRef } from 'react';
+import { postData } from '../../utils/rest_api';
 
 const LoginForm = ({ onUserLogin, onCurrentUser, onAdmin }) => {
   const [info, setInfo] = useState(null);
@@ -16,39 +17,34 @@ const LoginForm = ({ onUserLogin, onCurrentUser, onAdmin }) => {
     e.preventDefault();
 
     const formData = {
-      username: document.querySelector('#email').value,
+      user_email: document.querySelector('#email').value,
       password: document.querySelector('#password').value
     };
 
-    const response = await fetch('/users.json');
+    const data = await postData(
+      'http://localhost:3001/api/auth/login',
+      formData
+    );
 
-    const data = await response.json();
-
-    for (let i = 0; i < data.length; i++) {
-      if (
-        data[i].email === formData.username &&
-        data[i].password === formData.password
-      ) {
+    if (data) {
+      if (data.message) {
+        setInfo(data);
+      } else {
         onUserLogin(true);
-
         onCurrentUser({
-          firstname: data[i].firstname,
-          lastname: data[i].lastname,
-          address: data[i].address,
-          email: data[i].email
+          first_name: data.first_name,
+          last_name: data.last_name,
+          phone: data.phone,
+          country: data.country,
+          city: data.city,
+          street: data.street,
+          user_email: data.user_email,
+          is_admin: data.is_admin
         });
-        if (data[i].admin === true) {
+        if (data.admin === true) {
           onAdmin(true);
         }
         history.push('/');
-      } else if (data[i].email !== formData.username) {
-        setInfo({
-          message: 'No user found'
-        });
-      } else if (data[i].password !== formData.password) {
-        setInfo({
-          message: 'Password does not match'
-        });
       }
     }
   };
