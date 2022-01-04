@@ -27,8 +27,10 @@ router.post("/login", function (req, res, next) {
             });
           }
           if (result) {
+            req.session.usuario = user;
             res.status(200).json(user);
           } else {
+            req.session = null;
             res.status(200).json({
               message: "Password does not match",
             });
