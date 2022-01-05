@@ -7,6 +7,8 @@ import { admin } from '../../actions';
 import { useRef } from 'react';
 import { postData } from '../../utils/rest_api';
 
+import './loginForm.css';
+
 const LoginForm = ({ onUserLogin, onCurrentUser, onAdmin }) => {
   const [info, setInfo] = useState(null);
   const [noUser, setNoUser] = useState(false);

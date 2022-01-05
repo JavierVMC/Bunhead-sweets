@@ -1,3 +1,5 @@
+import './intro.css';
+
 const Intro = () => {
   return (
     <div id="intro">
@@ -17,7 +19,7 @@ const Intro = () => {
                 </p>
                 <a href="#about" className="btn btn-custom btn-lg page-scroll">
                   Learn More
-                </a>{" "}
+                </a>{' '}
               </div>
             </div>
           </div>

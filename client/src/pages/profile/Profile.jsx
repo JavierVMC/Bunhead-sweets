@@ -1,5 +1,6 @@
 import UserInfo from '../../components/user_info/UserInfo';
 import { ResourceLoader } from '../../components/resource_loader/ResourceLoader';
+import './profile.css';
 
 export const Profile = () => {
   return (

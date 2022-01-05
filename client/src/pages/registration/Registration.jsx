@@ -1,4 +1,5 @@
 import { RegistrationForm } from '../../components/registration_form/RegistrationForm';
+import './registration.css';
 
 export const Registration = () => {
   return (

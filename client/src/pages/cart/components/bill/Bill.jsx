@@ -1,6 +1,7 @@
 import { RegularList } from '../../../../components/regular_list/RegularList';
 import { BillItem } from '../../../../components/bill_item/BillItem';
 import Button from '@restart/ui/esm/Button';
+import './bill.css';
 
 export const Bill = ({ userslist }) => {
   let total = 0;

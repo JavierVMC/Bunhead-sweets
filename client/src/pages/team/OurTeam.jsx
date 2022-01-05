@@ -1,4 +1,5 @@
 import TeamMembers from './components/team_members/TeamMembers';
+import './ourTeam.css';
 
 const OurTeam = () => {
   return (

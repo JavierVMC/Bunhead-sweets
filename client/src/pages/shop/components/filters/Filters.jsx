@@ -1,4 +1,5 @@
 import Checkbox from '../../../../components/checkbox/Checkbox';
+import './filters.css';
 
 export const Filters = () => {
   return (

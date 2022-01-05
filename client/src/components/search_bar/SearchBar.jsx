@@ -1,21 +1,23 @@
+import './searchBar.css';
+
 export const SearchBar = () => {
   const onSearch = (e) => {
     e.preventDefault();
 
-    const text = document.getElementById("searchBarInput").value.toLowerCase();
-    let elementos = document.getElementsByClassName("news-container");
+    const text = document.getElementById('searchBarInput').value.toLowerCase();
+    let elementos = document.getElementsByClassName('news-container');
     if (text.length > 0) {
       for (let elemento of elementos) {
         if (elemento.innerText.toLowerCase().includes(text)) {
-          elemento.classList.add("visible");
+          elemento.classList.add('visible');
         } else {
-          elemento.classList.add("hidden");
+          elemento.classList.add('hidden');
         }
       }
     } else {
       for (let elemento of elementos) {
-        elemento.classList.remove("hidden");
-        elemento.classList.add("visible");
+        elemento.classList.remove('hidden');
+        elemento.classList.add('visible');
       }
     }
   };

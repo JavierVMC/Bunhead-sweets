@@ -1,10 +1,12 @@
+import './product.css';
+
 const Product = ({ product }) => {
   const { name, image, category, price, description } = product || {
-    name: "Cargando...",
-    image: "Cargando...",
-    category: "Cargando...",
-    price: "Cargando...",
-    description: "Cargando...",
+    name: 'Cargando...',
+    image: 'Cargando...',
+    category: 'Cargando...',
+    price: 'Cargando...',
+    description: 'Cargando...'
   };
 
   return (

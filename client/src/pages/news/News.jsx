@@ -1,6 +1,7 @@
 import { NewsList } from './components/news_list/NewsList';
 import { ResourceLoader } from '../../components/resource_loader/ResourceLoader';
 import { SearchBar } from '../../components/search_bar/SearchBar';
+import './news.css';
 
 export const News = () => {
   return (

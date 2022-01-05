@@ -1,27 +1,29 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
-import StepContent from "@mui/material/StepContent";
-import Button from "@mui/material/Button";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import StepContent from '@mui/material/StepContent';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+
+import './verticalLinearStepper.css';
 
 const steps = [
   {
-    label: "Primer Paso",
-    description: `Inicie Sesión o cree una cuenta y dírijase a la pestaña SHOP `,
+    label: 'Primer Paso',
+    description: `Inicie Sesión o cree una cuenta y dírijase a la pestaña SHOP `
   },
   {
-    label: "Segundo Paso",
+    label: 'Segundo Paso',
     description:
-      "Elija el/los producto/s que desea llevar e indique la cantidad que desea.",
+      'Elija el/los producto/s que desea llevar e indique la cantidad que desea.'
   },
   {
-    label: "Tercer Paso",
-    description: `Dar click al ícono carrito y finalizar la compra`,
-  },
+    label: 'Tercer Paso',
+    description: `Dar click al ícono carrito y finalizar la compra`
+  }
 ];
 
 export default function VerticalLinearStepper() {
@@ -68,7 +70,7 @@ export default function VerticalLinearStepper() {
                           onClick={handleNext}
                           sx={{ mt: 1, mr: 1 }}
                         >
-                          {index === steps.length - 1 ? "Finish" : "Continue"}
+                          {index === steps.length - 1 ? 'Finish' : 'Continue'}
                         </Button>
                         <Button
                           disabled={index === 0}

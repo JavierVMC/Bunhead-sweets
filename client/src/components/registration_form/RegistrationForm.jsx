@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { postData, getData } from '../../utils/rest_api';
 
+import './registrationForm.css';
+
 export const RegistrationForm = () => {
   const [emailAvailable, setEmailAvailable] = useState(true);
 

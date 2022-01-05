@@ -1,3 +1,5 @@
+import './member.css';
+
 const Member = ({ member }) => {
   return (
     <li className="member row">

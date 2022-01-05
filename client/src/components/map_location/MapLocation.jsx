@@ -1,3 +1,5 @@
+import './mapLocation.css';
+
 const MapLocation = () => {
   return (
     <iframe

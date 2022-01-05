@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import Intro from '../../components/intro/Intro';
 import VerticalLinearStepper from '../../components/vertical_stepper/VerticalLinearStepper';
 
+import './home.css';
+
 const Home = () => {
   const [landingPageData, setLandingPageData] = useState({});
   useEffect(() => {

@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
-import emailjs from "emailjs-com";
+import React, { useRef } from 'react';
+import emailjs from 'emailjs-com';
+import './contactForm.css';
 
 const ContactForm = () => {
   const form = useRef();
@@ -9,10 +10,10 @@ const ContactForm = () => {
 
     emailjs
       .sendForm(
-        "service_i28qate",
-        "template_6d2rjye",
+        'service_i28qate',
+        'template_6d2rjye',
         form.current,
-        "user_w131cNcyyGRVHUJBOUUPK"
+        'user_w131cNcyyGRVHUJBOUUPK'
       )
       .then(
         (result) => {
@@ -26,14 +27,14 @@ const ContactForm = () => {
   };
 
   const envioExitoso = () => {
-    const boton = document.querySelector("form#contactForm button");
-    boton.innerHTML = "Mensaje enviado exitosamente";
+    const boton = document.querySelector('form#contactForm button');
+    boton.innerHTML = 'Mensaje enviado exitosamente';
     boton.disabled = true;
-    boton.classList.add("button-disabled");
+    boton.classList.add('button-disabled');
 
-    const reset = document.querySelector("#newMessage");
-    reset.addEventListener("click", () => {
-      boton.classList.remove("button-disabled");
+    const reset = document.querySelector('#newMessage');
+    reset.addEventListener('click', () => {
+      boton.classList.remove('button-disabled');
     });
   };
 

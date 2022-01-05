@@ -4,6 +4,8 @@ import { Filters } from './components/filters/Filters';
 import ResourceProductsLoader from '../../components/resource_products_loader/ResourceProductsLoader';
 import { useRef, useEffect } from 'react';
 
+import './shop.css';
+
 export const Shop = () => {
   const isMountedRef = useRef(true);
   useEffect(

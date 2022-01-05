@@ -1,4 +1,5 @@
 import ContactForm from '../../../../components/contact_form/ContactForm';
+import './formSection.css';
 
 const FormSection = () => {
   return (

@@ -5,6 +5,8 @@ import { categoryFilterUnselected } from '../../actions';
 import { sorterFilterSelected } from '../../actions';
 import { sorterFilterUnselected } from '../../actions';
 
+import './checkbox.css';
+
 const Checkbox = ({
   label,
   filterType,

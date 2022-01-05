@@ -1,4 +1,5 @@
 import MapLocation from '../../../../components/map_location/MapLocation';
+import './mapSection.css';
 
 const MapSection = () => {
   return (
