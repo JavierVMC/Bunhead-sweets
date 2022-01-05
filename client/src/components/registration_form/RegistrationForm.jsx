@@ -22,8 +22,8 @@ export const RegistrationForm = () => {
     const users = await getData(
       `http://localhost:3001/api/user/${newUser.user_email}`
     );
-    console.log(users);
-    if (users.length !== 0) {
+
+    if (users.length > 0) {
       setEmailAvailable(false);
     } else {
       setEmailAvailable(true);

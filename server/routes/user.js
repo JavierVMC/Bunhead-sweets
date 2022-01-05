@@ -20,9 +20,13 @@ router.get("/", function (req, res, next) {
 // GET by id
 router.get("/:id", function (req, res, next) {
   models.users
-    .findByPk(req.params.id)
+    .findAll({
+      where: {
+        user_email: req.params.id,
+      },
+    })
     .then((users) => {
-      res.send(users);
+      res.status(200).send(users);
     })
     .catch((error) => console.log(error));
 });
