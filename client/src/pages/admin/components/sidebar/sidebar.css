@@ -1,0 +1,9 @@
+#sidebar a {
+  color: #000;
+  font-size: 1em;
+}
+
+#sidebar ul {
+  display: flex;
+  flex-direction: column;
+}

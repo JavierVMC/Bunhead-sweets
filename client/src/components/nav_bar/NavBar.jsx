@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { useRef, useEffect } from 'react';
-import { userHasLoggedIn } from '../../actions';
+import { userHasLoggedIn } from '../../redux/actions/actions';
+import { currentUserLogin } from '../../redux/actions/actions';
 
-const NavBar = ({ userIsLogin, onUserLogin, isAdmin }) => {
+import './navBar.css';
+
+const NavBar = ({ userIsLogin, onUserLogin, currentUser, onCurrentUser }) => {
   const isMountedRef = useRef(true);
   useEffect(
     () => () => {
@@ -28,9 +31,9 @@ const NavBar = ({ userIsLogin, onUserLogin, isAdmin }) => {
             <span className="icon-bar"></span>{' '}
             <span className="icon-bar"></span>{' '}
           </button>
-          <a className="navbar-brand" href="#page-top">
+          <Link className="navbar-brand" to="/">
             Bunheads' Sweets
-          </a>{' '}
+          </Link>{' '}
         </div>
 
         <div
@@ -39,39 +42,48 @@ const NavBar = ({ userIsLogin, onUserLogin, isAdmin }) => {
         >
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/tienda">Tienda</Link>
             </li>
             <li>
-              <Link to="/tienda">Shop</Link>
+              <Link to="/noticias">Noticias</Link>
             </li>
             <li>
-              <Link to="/noticias">News</Link>
+              <Link to="/equipo">Equipo</Link>
             </li>
             <li>
-              <Link to="/equipo">Team</Link>
-            </li>
-            <li>
-              <Link to="/contactanos">Contact</Link>
+              <Link to="/contactanos">Contáctanos</Link>
             </li>
             {userIsLogin ? (
               <>
-                <li>
-                  <Link to="/usuario">Profile</Link>
-                </li>
-                <li>
-                  <Link to="/carrito">Cart</Link>
-                </li>{' '}
-                {isAdmin ? (
-                  <Link to="panel-de-control">Control Panel</Link>
+                {currentUser.is_admin ? (
+                  <li>
+                    <Link to="/panel-de-control">Control Panel</Link>
+                  </li>
                 ) : (
                   ''
                 )}
+                <li>
+                  <Link to="/usuario">Perfil</Link>
+                </li>
+                <li>
+                  <Link to="/carrito">Carrito</Link>
+                </li>{' '}
                 <li className="sinEfecto">
                   <Link to="/">
                     <button
                       id="loginButton"
                       onClick={() => {
                         onUserLogin(false);
+                        onCurrentUser({
+                          user_email: 'Cargando...',
+                          first_name: 'Cargando...',
+                          last_name: 'Cargando...',
+                          country: 'Cargando...',
+                          city: 'Cargando...',
+                          street: 'Cargando...',
+                          phone: 'Cargando...',
+                          is_admin: false
+                        });
                       }}
                     >
                       Cerrar Sesión
@@ -89,7 +101,9 @@ const NavBar = ({ userIsLogin, onUserLogin, isAdmin }) => {
                 </li>
                 <li className="sinEfecto">
                   <Link to="/registro">
-                    <button id="signupButton">Registrarse</button>
+                    <button id="signupButton" className="btn btn-primary">
+                      Registrarse
+                    </button>
                   </Link>
                 </li>
               </>
@@ -102,12 +116,13 @@ const NavBar = ({ userIsLogin, onUserLogin, isAdmin }) => {
 };
 
 const mapStateToProps = (state) => ({
-  userIsLogin: state.appReducer.userIsLogin,
-  isAdmin: state.admin
+  userIsLogin: state.authR.userIsLogin,
+  currentUser: state.userR.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onUserLogin: (islogin) => dispatch(userHasLoggedIn(islogin))
+  onUserLogin: (islogin) => dispatch(userHasLoggedIn(islogin)),
+  onCurrentUser: (currentUser) => dispatch(currentUserLogin(currentUser))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

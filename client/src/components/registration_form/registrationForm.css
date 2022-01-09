@@ -33,25 +33,9 @@
 }
 
 #registrationForm button {
-  background-color: var(--colorOscuro);
-  border-radius: 10px;
-  border: none;
   width: 100%;
   padding: 10px;
   font-weight: bold;
-}
-
-#registrationForm button:hover {
-  background-color: var(--colorButtonHover);
-}
-
-#registrationForm button:active {
-  outline: none;
-  background-color: var(--colorButtonActive);
-}
-
-#registrationForm input:focus {
-  outline: none;
 }
 
 .country,

@@ -1,9 +1,27 @@
-div#ourTeam {
-  padding-top: 200px;
+#ourTeam {
+  padding-top: 0;
   padding-bottom: 200px;
 }
 
-div#ourTeam h1 {
-  color: #ff9292;
-  margin-bottom: 50px;
+#ourTeam h1 {
+  margin-bottom: 1em;
+}
+
+#cabecera-team {
+  display: flex;
+  justify-content: center;
+  padding-top: 15em;
+  padding-bottom: 5em;
+  width: 100%;
+  background: url(../../assets/images/contact-bg.jpg) bottom center no-repeat;
+  background-color: rgb(25 25 25 / 80%);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-blend-mode: soft-light;
+}
+
+#members-container {
+  margin-top: 5em;
 }

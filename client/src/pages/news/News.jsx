@@ -6,10 +6,10 @@ import './news.css';
 export const News = () => {
   return (
     <div id="news">
+      <div id="titulo">
+        <h1>Noticias</h1>
+      </div>
       <div className="container">
-        <div id="titulo">
-          <h2>Noticias</h2>
-        </div>
         <SearchBar></SearchBar>
         <ResourceLoader resourceUrl="/news.json" resourceName="newsInfoList">
           <NewsList></NewsList>

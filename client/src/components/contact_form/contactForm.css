@@ -1,17 +1,17 @@
-form#contactForm {
+#contactForm {
   max-width: 500px;
   margin: 0 auto !important;
 }
 
-form#contactForm div {
+#contactForm div {
   padding: 0;
   padding-right: 30px;
   margin-bottom: 50px;
 }
 
-form#contactForm input,
-form#contactForm textarea,
-form#contactForm select {
+#contactForm input,
+#contactForm textarea,
+#contactForm select {
   width: 100%;
   box-sizing: border-box;
   padding: 5px;
@@ -20,34 +20,20 @@ form#contactForm select {
   border-bottom: var(--colorOscuro) solid 1px;
 }
 
-form#contactForm button {
-  background-color: var(--colorOscuro);
-  border-radius: 10px;
-  border: none;
+#contactForm button {
   width: 100%;
   padding: 10px;
   font-weight: bold;
 }
 
-form#contactForm button:hover {
-  color: var(--colorOscuro);
-  background-color: var(--colorClaro);
-}
-
-form#contactForm button:active {
-  outline: none;
-  border: var(--colorOscuro) solid 2px;
-  background-color: #000;
-}
-
-form#contactForm option {
+#contactForm option {
   background-color: #000;
   border: none;
 }
 
-form#contactForm input:focus,
-form#contactForm textarea:focus,
-form#contactForm select:focus {
+#contactForm input:focus,
+#contactForm textarea:focus,
+#contactForm select:focus {
   outline: none;
   border-bottom: var(--colorOscuro) solid 5px;
 }
@@ -57,17 +43,17 @@ form#contactForm select:focus {
   border-radius: 2px;
 }
 
-form#contactForm input#newMessage {
+#contactForm input#newMessage {
   padding: 0;
   border: none;
   color: var(--colorOscuro);
 }
 
 @media only screen and (max-width: 600px) {
-  form#contactForm div {
+  #contactForm div {
     padding: 0;
   }
-  form#contactForm {
+  #contactForm {
     padding: 0 10px;
   }
 }

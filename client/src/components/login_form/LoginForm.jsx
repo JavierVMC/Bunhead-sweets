@@ -1,15 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { userHasLoggedIn } from '../../actions';
-import { currentUserLogin } from '../../actions';
-import { admin } from '../../actions';
-import { useRef } from 'react';
+import { userHasLoggedIn, currentUserLogin } from '../../redux/actions/actions';
 import { postData } from '../../utils/rest_api';
 
 import './loginForm.css';
 
-const LoginForm = ({ onUserLogin, onCurrentUser, onAdmin }) => {
+const LoginForm = ({ onUserLogin, onCurrentUser }) => {
   const [info, setInfo] = useState(null);
   const [noUser, setNoUser] = useState(false);
   const [noPassword, setNoPassword] = useState(false);
@@ -43,9 +40,6 @@ const LoginForm = ({ onUserLogin, onCurrentUser, onAdmin }) => {
           user_email: data.user_email,
           is_admin: data.is_admin
         });
-        if (data.admin === true) {
-          onAdmin(true);
-        }
         history.push('/');
       }
     }
@@ -92,7 +86,9 @@ const LoginForm = ({ onUserLogin, onCurrentUser, onAdmin }) => {
         {noPassword ? <p className="warningForm">Contraseña incorrecta</p> : ''}
       </div>
       <div className="col-12">
-        <button type="submit">Iniciar Sesión</button>
+        <button type="submit" className="btn btn-primary">
+          Iniciar Sesión
+        </button>
       </div>
     </form>
   );
@@ -104,7 +100,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onUserLogin: (islogin) => dispatch(userHasLoggedIn(islogin)),
-  onAdmin: (isAdmin) => dispatch(admin(isAdmin)),
   onCurrentUser: (currentUser) => dispatch(currentUserLogin(currentUser))
 });
 

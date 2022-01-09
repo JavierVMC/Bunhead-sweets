@@ -1,47 +1,39 @@
-
-#componentePerfil h1{
-    color: var(--colorClaro) ;
-    background-color: var(--colorOscuro);
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 3em;
-
+#datosPerfil {
+  margin: auto;
 }
 
-#datosPerfil{
-    margin: auto;
-    
+#datosPerfil p {
+  color: #000;
 }
 
-#datosPerfil p{
-    color: #000 ;
+#datosPerfil span {
+  font-weight: bold;
 }
 
-#datosPerfil h3{
-    color: #000;
+#datosPerfil h3 {
+  color: #000;
+  margin-bottom: 1em;
 }
 
-
-#componentePerfil div{
-    align-items: center;
+#componentePerfil div {
+  align-items: center;
 }
 
-.flex-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 }
 
-#imagenPerfil{
-    display: flex;
-    
-    align-content: center;
-    justify-content: center;
+#imagenPerfil {
+  display: flex;
+
+  align-content: center;
+  justify-content: center;
 }
 
-#imagenPerfil img{
-    border-radius: 100%;
-    max-width: 100%;
+#imagenPerfil img {
+  border-radius: 100%;
+  max-width: 100%;
 }
-

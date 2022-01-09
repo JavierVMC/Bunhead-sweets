@@ -1,9 +1,9 @@
 import { useReducer, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { categoryFilterSelected } from '../../actions';
-import { categoryFilterUnselected } from '../../actions';
-import { sorterFilterSelected } from '../../actions';
-import { sorterFilterUnselected } from '../../actions';
+import { categoryFilterSelected } from '../../redux/actions/actions';
+import { categoryFilterUnselected } from '../../redux/actions/actions';
+import { sorterFilterSelected } from '../../redux/actions/actions';
+import { sorterFilterUnselected } from '../../redux/actions/actions';
 
 import './checkbox.css';
 
@@ -50,8 +50,8 @@ const Checkbox = ({
 };
 
 const mapStateToProps = (state) => ({
-  catFilters: state.appReducer.categoryFilters,
-  sortFilters: state.appReducer.sorterFilters
+  catFilters: state.filtersR.categoryFilters,
+  sortFilters: state.filtersR.sorterFilters
 });
 
 const mapDispatchToProps = (dispatch) => ({

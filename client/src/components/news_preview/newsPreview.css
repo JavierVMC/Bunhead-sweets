@@ -1,8 +1,10 @@
 .news-container {
-  background-color:#f7effa;
+  background-color: var(--colorClaro);
   padding: 2em 3em;
   color: #000;
   margin-bottom: 2em;
+  border-radius: 0.25em;
+  border-bottom: solid #000 1px;
 }
 
 .news-container h2 {

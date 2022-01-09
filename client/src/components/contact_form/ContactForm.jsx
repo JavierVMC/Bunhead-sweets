@@ -95,7 +95,7 @@ const ContactForm = () => {
         ></textarea>
       </div>
       <div className="col-12">
-        <button type="submit" value="Send">
+        <button type="submit" value="Send" className="btn btn-primary">
           Enviar
         </button>
       </div>

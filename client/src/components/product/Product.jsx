@@ -14,11 +14,16 @@ const Product = ({ product }) => {
       <div className="col-12 col-md-3">
         <img src={image} alt={name}></img>
       </div>
-      <div className="text-align-left col-12 col-md-9">
+      <div className="text-align-left col-12 col-md-7">
         <h2 className="h2">{name}</h2>
         <p className="badge bg-secondary">{category}</p>
         <p className="price">$ {price}</p>
         <p>{description}</p>
+      </div>
+      <div className="col-12 col-md-2">
+        <button type="button" className="btn btn-primary">
+          Agregar al carrito
+        </button>
       </div>
       <hr></hr>
     </li>

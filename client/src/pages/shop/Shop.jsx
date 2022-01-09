@@ -15,20 +15,21 @@ export const Shop = () => {
     []
   );
   return (
-    <div>
-      <div id="shop">
-        <div className="container">
-          <div className="shop-splitscreen">
-            <SplitScreen leftWeight={1} rightWeight={3}>
-              <Filters></Filters>
-              <ResourceProductsLoader
-                resourceUrl="/products.json"
-                resourceName="productsList"
-              >
-                <ProductList></ProductList>
-              </ResourceProductsLoader>
-            </SplitScreen>
-          </div>
+    <div id="shop">
+      <div id="cabecera-shop">
+        <h1>Tienda</h1>
+      </div>
+      <div className="container-fluid">
+        <div className="shop-splitscreen">
+          <SplitScreen leftWeight={1} rightWeight={4}>
+            <Filters></Filters>
+            <ResourceProductsLoader
+              resourceUrl="/products.json"
+              resourceName="productsList"
+            >
+              <ProductList></ProductList>
+            </ResourceProductsLoader>
+          </SplitScreen>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { postData, getData } from '../../utils/rest_api';
 
 import './registrationForm.css';
@@ -121,7 +121,9 @@ export const RegistrationForm = () => {
         ></input>
       </div>
       <div className="col-12">
-        <button type="submit">Registrarme</button>
+        <button type="submit" className="btn btn-primary">
+          Registrarme
+        </button>
       </div>
     </form>
   );

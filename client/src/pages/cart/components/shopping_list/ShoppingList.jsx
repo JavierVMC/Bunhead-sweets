@@ -1,4 +1,4 @@
-import Product from '../../../../components/product/Product';
+import { CartItem } from '../../../../components/cart_item/CartItem';
 import { RegularList } from '../../../../components/regular_list/RegularList';
 
 const ShoppingList = ({ userslist }) => {
@@ -7,8 +7,8 @@ const ShoppingList = ({ userslist }) => {
       <ul>
         <RegularList
           items={userslist[0].cart}
-          resourceName="product"
-          itemComponent={Product}
+          resourceName="item"
+          itemComponent={CartItem}
         ></RegularList>
       </ul>
     </>

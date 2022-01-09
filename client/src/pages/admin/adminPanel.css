@@ -1,0 +1,13 @@
+.sidebar-container {
+  background-color: var(--colorOscuro) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5em;
+}
+
+.content-admin {
+  padding: 2em;
+  min-width: 1000px;
+  color: #000;
+}
