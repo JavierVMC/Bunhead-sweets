@@ -1,12 +1,30 @@
 import { connect } from 'react-redux';
+import { getImage } from '../../utils/rest_api';
 import './userInfo.css';
 
 const UserInfo = ({ currentUser }) => {
+  const [avatar, setAvatar] = useState(undefined);
+
+  const url = currentUser.image;
+
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const [response, error] = await getImage(url);
+      if (error) log(error);
+      else {
+        log(`got response ${response}`);
+        setAvatar(response);
+      }
+    }
+    fetchData();
+  }, [url]);
+
   return (
     <div id="componentePerfil">
       <div className="flex-container row">
         <div className="col-12 col-md-3" id="imagenPerfil">
-          <img src={currentUser.image} alt="foto de perfil"></img>
+          <img src={avatar} alt="Foto de perfil"></img>
         </div>
 
         <div id="datosPerfil" className="col-12 col-md-9">
