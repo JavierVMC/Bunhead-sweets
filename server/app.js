@@ -10,6 +10,7 @@ var productsRouter = require("./routes/product");
 var productCategoriesRouter = require("./routes/product_category");
 var usersRouter = require("./routes/user");
 var authRouter = require("./routes/auth");
+var imagesRouter = require("./routes/images");
 
 var app = express();
 
@@ -35,5 +36,6 @@ app.use("/api/product", productsRouter);
 app.use("/api/product_category", productCategoriesRouter);
 app.use("/api/user", usersRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/image", imagesRouter);
 
 module.exports = app;
