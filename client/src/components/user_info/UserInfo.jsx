@@ -1,19 +1,20 @@
 import { connect } from 'react-redux';
 import { getImage } from '../../utils/rest_api';
+import { useEffect, useState } from 'react';
 import './userInfo.css';
 
 const UserInfo = ({ currentUser }) => {
   const [avatar, setAvatar] = useState(undefined);
 
   const url = currentUser.image;
-
+  console.log(currentUser.image);
   useEffect(() => {
     async function fetchData() {
       // You can await here
       const [response, error] = await getImage(url);
-      if (error) log(error);
+      if (error) console.log(error);
       else {
-        log(`got response ${response}`);
+        console.log(`got response ${response}`);
         setAvatar(response);
       }
     }
@@ -24,7 +25,19 @@ const UserInfo = ({ currentUser }) => {
     <div id="componentePerfil">
       <div className="flex-container row">
         <div className="col-12 col-md-3" id="imagenPerfil">
-          <img src={avatar} alt="Foto de perfil"></img>
+          {currentUser.image ? (
+            <img src={avatar} alt="Foto de perfil"></img>
+          ) : (
+            <div class="avatar-upload">
+              <div class="avatar-edit">
+                <input type="file" id="imageUpload" accept=".jpg, .jpeg" />
+                <label for="imageUpload"></label>
+              </div>
+              <div class="avatar-preview">
+                <div id="imagePreview" className="img-fluid"></div>
+              </div>
+            </div>
+          )}
         </div>
 
         <div id="datosPerfil" className="col-12 col-md-9">
