@@ -41,4 +41,10 @@ router.post(
   }
 );
 
+router.get("/:file(*)", (req, res) => {
+  let file = req.params.file;
+  let fileLocation = path.join(__dirname, "/../images", file);
+  res.sendFile(`${fileLocation}`);
+});
+
 module.exports = router;
