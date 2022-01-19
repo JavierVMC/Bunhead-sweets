@@ -49,3 +49,30 @@ export async function getImage(url) {
     return [null, error];
   }
 }
+
+export const updateProfileImage = ({ urlPut, urlPost }) => {
+  const fileInput = document.getElementById('imageUpload');
+  fileInput.addEventListener('change', (event) => {
+    const files = event.target.files;
+    const formData = new FormData();
+    formData.append('image', files[0]);
+
+    fetch(urlPost, {
+      method: 'POST',
+      body: formData
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('data');
+        console.log(data);
+        console.log('data.name');
+        console.log(data.name);
+        putData(urlPut, {
+          image: data.name
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
+};

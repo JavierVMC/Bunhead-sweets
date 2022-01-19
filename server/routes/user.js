@@ -57,7 +57,47 @@ router.post("/", function (req, res, next) {
 });
 
 // PUT (editar)
-router.put("/:id", function (req, res, next) {});
+router.put("/:id", function (req, res, next) {
+  models.users
+    .update(
+      {
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        phone: req.body.phone,
+        country: req.body.country,
+        city: req.body.city,
+        street: req.body.street,
+      },
+      {
+        where: {
+          user_email: req.params.id,
+        },
+      }
+    )
+    .then((users) => {
+      res.status(200).send(users);
+    })
+    .catch((error) => console.log(error));
+});
+
+// PUT (editar foto de perfil)
+router.put("/image/:id", function (req, res, next) {
+  models.users
+    .update(
+      {
+        image: req.body.image,
+      },
+      {
+        where: {
+          user_email: req.params.id,
+        },
+      }
+    )
+    .then((users) => {
+      res.status(200).send(users);
+    })
+    .catch((error) => console.log(error));
+});
 
 // DELETE
 router.delete("/:id", function (req, res, next) {});

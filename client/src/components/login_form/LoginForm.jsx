@@ -38,6 +38,7 @@ const LoginForm = ({ onUserLogin, onCurrentUser }) => {
           city: data.city,
           street: data.street,
           user_email: data.user_email,
+          image: data.image,
           is_admin: data.is_admin
         });
         history.push('/');

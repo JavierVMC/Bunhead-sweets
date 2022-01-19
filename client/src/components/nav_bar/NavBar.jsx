@@ -82,6 +82,7 @@ const NavBar = ({ userIsLogin, onUserLogin, currentUser, onCurrentUser }) => {
                           city: 'Cargando...',
                           street: 'Cargando...',
                           phone: 'Cargando...',
+                          image: 'image_1642567028612.jpg',
                           is_admin: false
                         });
                       }}

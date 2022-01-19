@@ -9,6 +9,7 @@ const userInitialState = {
     city: 'Cargando...',
     street: 'Cargando...',
     phone: 'Cargando...',
+    image: 'image_1642567028612.jpg',
     is_admin: false
   }
 };
@@ -27,6 +28,7 @@ export const userR = (state = userInitialState, action) => {
         country: payload.country,
         city: payload.city,
         street: payload.street,
+        image: payload.image,
         is_admin: payload.is_admin
       }
     };
