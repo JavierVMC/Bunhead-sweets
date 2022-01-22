@@ -14,6 +14,9 @@ export const Sidebar = () => {
         <li>
           <Link to="/panel-de-control/tabla-categorias">Categorias</Link>
         </li>
+        <li>
+          <Link to="/panel-de-control/graficos">Graficos</Link>
+        </li>
       </ul>
     </nav>
   );
