@@ -1,13 +1,39 @@
 .sidebar-container {
-  background-color: var(--colorOscuro) !important;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5em;
+  justify-content: left;
+  align-items: top;
+  margin-top: 2rem;
 }
 
 .content-admin {
   padding: 2em;
   min-width: 1000px;
   color: #000;
+}
+
+.adminPanel > div:nth-of-type(2) > div > div:first-of-type {
+  background-color: var(--colorButtonHover);
+}
+
+.content-admin {
+  background-color: var(--colorClaro);
+}
+
+#cabecera-controlPanel h1 {
+  margin-bottom: 1em;
+}
+
+#cabecera-controlPanel {
+  display: flex;
+  justify-content: center;
+  padding-top: 15em;
+  padding-bottom: 5em;
+  width: 100%;
+  background: url(../../assets/images/contact-bg.jpg) bottom center no-repeat;
+  background-color: rgb(25 25 25 / 80%);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-blend-mode: soft-light;
 }

@@ -1,10 +1,5 @@
 import { connect } from 'react-redux';
-import {
-  getImage,
-  updateProfileImage,
-  getData,
-  putData
-} from '../../utils/rest_api';
+import { getImage, putData } from '../../utils/rest_api';
 import { useEffect, useState } from 'react';
 import { currentUserLogin } from '../../redux/actions/actions';
 import './userInfo.css';
@@ -75,7 +70,11 @@ const UserInfo = ({ currentUser, updateCurrentUserInfo }) => {
               <label htmlFor="imageUpload"></label>
             </div>
             <div className="avatar-preview">
-              <img src={avatar} className="img-fluid"></img>
+              <img
+                src={avatar}
+                className="img-fluid"
+                alt="foto de perfil"
+              ></img>
             </div>
           </div>
         </div>
