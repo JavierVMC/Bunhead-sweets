@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Sidebar } from './components/sidebar/Sidebar';
 import { UsersSection } from './components/users_section/usersSection';
 import { ProductsSection } from './components/products_section/ProductsSection';
+import { CategoriesSection } from './components/categories_section/CategoriesSection';
 import { SplitScreen } from '../../components/split_screen/SplitScreen';
 // import { BarChart } from '../../components/bar_chart/BarChart';
 // import { PieChart } from '../../components/pie_chart/PieChart';
@@ -99,6 +100,11 @@ export const AdminPanel = () => {
                   exact
                   path="/panel-de-control/tabla-productos"
                   component={ProductsSection}
+                ></Route>
+                <Route
+                  exact
+                  path="/panel-de-control/tabla-categorias"
+                  component={CategoriesSection}
                 ></Route>
               </Switch>
             </Suspense>
