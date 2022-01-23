@@ -5,9 +5,6 @@ import { UsersSection } from './components/users_section/usersSection';
 import { ProductsSection } from './components/products_section/ProductsSection';
 import { CategoriesSection } from './components/categories_section/CategoriesSection';
 import { SplitScreen } from '../../components/split_screen/SplitScreen';
-// import { BarChart } from '../../components/bar_chart/BarChart';
-// import { PieChart } from '../../components/pie_chart/PieChart';
-// import { LineChart } from '../../components/line_chart/LineChart';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './adminPanel.css';
 import { ChartsSection } from './components/charts_section/ChartsSection';
@@ -54,18 +51,3 @@ export const AdminPanel = () => {
     </div>
   );
 };
-
-{
-  /* <div className="content-admin">
-            <h1>Usuarios</h1>
-            <TableUsers></TableUsers>
-            <BarChart
-              width={800}
-              height={450}
-              data={usData}
-              yAxisTitle={`Ordenes anuales`}
-            />
-            <PieChart data={data} innerRadius={0} outerRadius={200}></PieChart>
-            <LineChart data={dataLineChart}></LineChart>
-          </div> */
-}
