@@ -57,7 +57,7 @@ const NavBar = ({ userIsLogin, onUserLogin, currentUser, onCurrentUser }) => {
               <>
                 {currentUser.is_admin ? (
                   <li>
-                    <Link to="/panel-de-control">Control Panel</Link>
+                    <Link to="/panel-de-control">Panel de control</Link>
                   </li>
                 ) : (
                   ''

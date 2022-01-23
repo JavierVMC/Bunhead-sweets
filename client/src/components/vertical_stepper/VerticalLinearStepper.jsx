@@ -42,7 +42,7 @@ export default function VerticalLinearStepper() {
   };
 
   return (
-    <>
+    <div id="vertical-stepper-container">
       <div className="section-title">
         <h2 id="pasosCompra">Pasos para realizar una compra</h2>
       </div>
@@ -98,6 +98,6 @@ export default function VerticalLinearStepper() {
           </Box>
         </div>
       </div>
-    </>
+    </div>
   );
 }

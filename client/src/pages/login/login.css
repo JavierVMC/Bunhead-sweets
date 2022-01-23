@@ -11,7 +11,7 @@ div#login-container {
   background: linear-gradient(
     56deg,
     rgba(186, 95, 95, 1) 0%,
-    rgba(255, 146, 146, 1) 35%,
+    #db677c 35%,
     rgba(255, 244, 239, 1) 100%
   );
 }

@@ -14,10 +14,15 @@
   z-index: 5;
 }
 
-#searchBar button:hover {
-  background-color: #ecddd6;
+#searchBar input {
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-bottom: #000 solid 1px;
+  border-radius: 0;
 }
 
-#searchBar button:active {
-  background-color: #d8cbc5;
+#searchBar button {
+  background: none;
+  border-bottom: #000 solid 1px;
 }

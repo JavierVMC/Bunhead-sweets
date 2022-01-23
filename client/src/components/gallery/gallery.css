@@ -1,0 +1,15 @@
+#portfolio {
+  color: #000;
+}
+
+#portfolio h2 {
+  color: var(--colorOscuro);
+}
+
+#portfolio h2::after {
+  background: var(--colorOscuro);
+}
+
+.ourWork {
+  justify-content: center;
+}

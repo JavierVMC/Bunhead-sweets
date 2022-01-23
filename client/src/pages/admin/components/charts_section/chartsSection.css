@@ -3,3 +3,9 @@
   margin-left: 2rem;
   margin-right: 4rem;
 }
+
+#charts-section-admin h2 {
+  color: #000;
+  font-size: 2rem;
+  text-transform: none;
+}

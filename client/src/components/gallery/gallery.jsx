@@ -1,5 +1,6 @@
 // import { Image } from "./image";
 import Carousel from '../carousel/Carousel';
+import './gallery.css';
 
 export const Gallery = (props) => {
   return (
