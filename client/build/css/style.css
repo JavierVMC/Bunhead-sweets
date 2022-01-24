@@ -50,7 +50,7 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #ff9292;
+  color: #db677c;
 }
 ul,
 ol {
@@ -90,7 +90,7 @@ div#root {
   font-family: 'Raleway', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: #ff9292;
+  color: #db677c;
   text-transform: uppercase;
 }
 #menu.navbar-default .navbar-nav > li > a {
@@ -110,7 +110,7 @@ div#root {
   bottom: -1px;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #ba5f5f 0%, #ff9292 100%);
+  background: linear-gradient(to right, #ba5f5f 0%, #db677c 100%);
   content: '';
   transition: width 0.2s;
 }
@@ -131,7 +131,7 @@ div#root {
   bottom: -1px !important;
   width: 100% !important;
   height: 2px !important;
-  background: linear-gradient(to right, #ba5f5f 0%, #ff9292 100%) !important;
+  background: linear-gradient(to right, #ba5f5f 0%, #db677c 100%) !important;
   content: '' !important;
   transition: width 0.2s !important;
 }
@@ -173,7 +173,7 @@ div#root {
   text-transform: uppercase;
   color: #fff;
   background-color: #ba5f5f;
-  background-image: linear-gradient(to right, #ff9292 0%, #ba5f5f 100%);
+  background-image: linear-gradient(to right, #db677c 0%, #ba5f5f 100%);
   padding: 14px 34px;
   letter-spacing: 1px;
   margin: 0;
@@ -265,7 +265,7 @@ a:focus,
 /* About Section */
 #about {
   padding: 100px 0;
-  background-color: #ff9292;
+  background-color: #db677c;
 }
 #about h3 {
   font-size: 22px;
@@ -302,7 +302,7 @@ a:focus,
 #about img {
   width: 520px;
   margin-top: 10px;
-  background: #ff9292;
+  background: none;
   border-right: 0;
 }
 #about p {
@@ -355,7 +355,7 @@ a:focus,
 /* Portfolio Section */
 #portfolio {
   padding: 100px 0;
-  background-color: #ff9292;
+  background-color: none;
 }
 .portfolio-item {
   margin: 1px -15px 0 -14px;
@@ -583,7 +583,7 @@ label {
   transition: all 0.3s;
 }
 #contact .social i.fa:hover {
-  color: #ff9292;
+  color: #db677c;
   background: #fff;
 }
 /* Footer Section*/
@@ -597,7 +597,7 @@ footer > .copyright {
 }
 
 footer h4 {
-  color: #ff9292;
+  color: #db677c;
   font-size: 24px;
 }
 
@@ -611,10 +611,10 @@ footer #redes-footer {
 }
 
 footer a {
-  color: #ff9292;
+  color: #db677c;
 }
 footer a:hover {
-  border-bottom: 2px solid #ff9292;
+  border-bottom: 2px solid #db677c;
 }
 
 /* Carrusel */
@@ -646,4 +646,8 @@ footer a:hover {
 
 .warningForm {
   color: rgb(228, 15, 15);
+}
+
+#menu.navbar-default .navbar-nav > li > a {
+  text-transform: none;
 }
