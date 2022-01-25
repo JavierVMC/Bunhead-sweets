@@ -9,9 +9,6 @@
   width: 10%;
 }
 
-#product-id-cell {
-  width: 5%;
-}
 #product-name-cell {
   width: 15%;
 }
@@ -41,7 +38,18 @@
   margin: 0 auto;
 }
 
-.button-toggle-product {
+.button-toggle-product,
+.button-cancel-update-product {
   background: none;
   border: none;
+}
+
+.button-cancel-update-product {
+  color: var(--colorOscuro);
+  text-decoration: underline;
+  padding: 1rem;
+}
+.edit-buttons-container {
+  text-align: center;
+  width: 5%;
 }
