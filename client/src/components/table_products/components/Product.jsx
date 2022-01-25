@@ -26,6 +26,7 @@ export const Product = ({ product }) => {
   const [newDescription, setNewDescription] = useState(description);
   const [newPrice, setNewPrice] = useState(price);
   const [newCategoryId, setNewCategoryId] = useState(category_id);
+  const [newIsAvailable, setNewIsAvailable] = useState(isAvailable);
 
   useEffect(() => {
     async function getCategory() {
@@ -60,6 +61,7 @@ export const Product = ({ product }) => {
       setNewDescription(description);
       setNewPrice(parseFloat(price));
       setNewCategoryId(parseInt(category_id));
+      setIsAvailable(newIsAvailable);
 
       console.log(row.children[3].children[0]);
       console.log({
@@ -67,7 +69,7 @@ export const Product = ({ product }) => {
         category_id: parseInt(category_id),
         description: description,
         price: parseFloat(price),
-        is_available: isAvailable
+        is_available: newIsAvailable
       });
       setEditing(false);
 
@@ -145,10 +147,10 @@ export const Product = ({ product }) => {
         <button
           className="button-toggle-product"
           onClick={() => {
-            setIsAvailable(!isAvailable);
+            setNewIsAvailable(!newIsAvailable);
           }}
         >
-          {isAvailable ? (
+          {newIsAvailable ? (
             <BsToggleOn></BsToggleOn>
           ) : (
             <BsToggleOff></BsToggleOff>
@@ -168,6 +170,7 @@ export const Product = ({ product }) => {
           className="button-cancel-update-product"
           onClick={() => {
             setEditing(false);
+            setNewIsAvailable(isAvailable);
           }}
         >
           Cancelar
