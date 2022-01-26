@@ -4,6 +4,7 @@ import { Sidebar } from './components/sidebar/Sidebar';
 import { UsersSection } from './components/users_section/usersSection';
 import { ProductsSection } from './components/products_section/ProductsSection';
 import { CategoriesSection } from './components/categories_section/CategoriesSection';
+import { ReportsSection } from './components/reports_section/ReportsSection';
 import { SplitScreen } from '../../components/split_screen/SplitScreen';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './adminPanel.css';
@@ -42,6 +43,11 @@ export const AdminPanel = () => {
                   exact
                   path="/panel-de-control/graficos"
                   component={ChartsSection}
+                ></Route>
+                <Route
+                  exact
+                  path="/panel-de-control/reportes"
+                  component={ReportsSection}
                 ></Route>
               </Switch>
             </Suspense>

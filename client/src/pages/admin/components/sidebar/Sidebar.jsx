@@ -17,6 +17,9 @@ export const Sidebar = () => {
         <li>
           <Link to="/panel-de-control/graficos">Graficos</Link>
         </li>
+        <li>
+          <Link to="/panel-de-control/reportes">Reportes</Link>
+        </li>
       </ul>
     </nav>
   );
