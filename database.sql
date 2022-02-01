@@ -37,7 +37,7 @@ CREATE TABLE `Users` (
   `country` varchar(50) not null,
   `city` varchar(50) not null,
   `street` varchar(50) not null,
-  `image` varchar(500),
+  `image` varchar(500) default 'image_1642567028612.jpg',
   `is_admin` boolean not null,
   PRIMARY KEY (`user_email`)
 );

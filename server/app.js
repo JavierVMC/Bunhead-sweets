@@ -2,6 +2,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
+// Importing express-session module
+const session = require('express-session');
+// Importing file-store module
+const filestore = require('session-file-store')(session);
 var logger = require('morgan');
 var cors = require('cors');
 
@@ -15,26 +19,36 @@ var reportRouter = require('./routes/report');
 var barChartRouter = require('./routes/bar_chart');
 var pieChartRouter = require('./routes/pie_chart');
 var lineChartRouter = require('./routes/line_chart');
-var ordersRouter=require("./routes/order");
-
+var ordersRouter = require('./routes/order');
 
 var app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ['http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+  })
+);
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
+app.set('trust proxy', 1); // trust first proxy
 app.use(
-  cookieSession({
-    name: 'session',
-    keys: ['DAWM-bunhead-sweets'],
-
-    // Cookie Options
-    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  session({
+    name: `daffyduck`,
+    secret: 'some-secret-example',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: false, // This will only work if you have https enabled!
+      maxAge: 600000 // 1 min
+    }
   })
 );
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', indexRouter);
@@ -47,6 +61,6 @@ app.use('/api/report', reportRouter);
 app.use('/api/bar_chart', barChartRouter);
 app.use('/api/pie_chart', pieChartRouter);
 app.use('/api/line_chart', lineChartRouter);
-app.use("/api/order",ordersRouter);
+app.use('/api/order', ordersRouter);
 
 module.exports = app;

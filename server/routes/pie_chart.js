@@ -3,6 +3,8 @@ const PieChart = require('../mongoModels/PieChart');
 const express = require('express');
 const router = express.Router();
 
+const sessionChecker = require('../middleware/authentication');
+
 router.get('/', (req, res) => {
   PieChart.find()
     .then((PieCharts) => {
@@ -11,7 +13,7 @@ router.get('/', (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.get('/:name', (req, res) => {
+router.get('/:name', sessionChecker, (req, res) => {
   PieChart.findOne({ name: req.params.name })
     .then((PieChart) => {
       res.send(PieChart);
