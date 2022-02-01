@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "test1",
+    "password": "Elguapo10",
     "database": "bunhead_sweets_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
