@@ -37,6 +37,10 @@ function initModels(sequelize) {
   user_payments.belongsTo(users, { as: "user_email_user", foreignKey: "user_email"});
   users.hasMany(user_payments, { as: "user_payments", foreignKey: "user_email"});
 
+  
+
+
+
   return {
     cart_items,
     carts,

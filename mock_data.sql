@@ -27,8 +27,29 @@ insert into Products (name, category_id, price, description, image, is_available
 insert into Products (name, category_id, price, description, image, is_available) values ('Mix - Cocktail Strawberry Daiquiri', 3, 34.12, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tellus vestibulum, consequat augue vitae, semper est. Donec gravida nisi ac sem consectetur, nec mollis massa hendrerit. Fusce mi mauris, mollis quis quam eu, consequat faucibus nisl. Maecenas nec quam odio. Integer eget accumsan.', 'http://dummyimage.com/166x100.png/ff4444/ffffff', true);
 
 
-insert into Users (user_email, first_name, last_name, phone, password, country, city, street, is_admin) values ('javavega@espol.edu.ec', 'Javier', 'Vega', '7684839858', '123', 'Portugal', 'Valongo', '66071 Shopko Park', false);
-insert into Users (user_email, first_name, last_name, phone, password, country, city, street, is_admin) values ('faontane@espol.edu.ec', 'Fabrizzio', 'Ontaneda', '2672483288', 'xd', 'Philippines', 'Diadi', '48 Green Ridge Circle', false);
-insert into Users (user_email, first_name, last_name, phone, password, country, city, street, is_admin) values ('aaalfran@espol.edu.ec', 'Aaron', 'Franco', '2814904345', '123', 'Nigeria', 'Amper', '0 Brentwood Crossing', false);
-insert into Users (user_email, first_name, last_name, phone, password, country, city, street, is_admin) values ('natroram@espol.edu.ec', 'Natalia', 'Ramirez', '7672031247', '123', 'China', 'Sandouping', '520 Grayhawk Parkway', false);
-insert into Users (user_email, first_name, last_name, phone, password, country, city, street, is_admin) values ('bunheadsweets@gmail.com', 'Jean', 'Thunderchief', '3412162120', 'admin', 'China', 'Touzao', '7 Jana Center', true);
+insert into carts(id,user_email) values(1,"faontane@espol.edu.ec");
+insert into carts(id,user_email) values(2,"javavega@espol.edu.ec");
+insert into carts(id,user_email) values(3,"aaalfran@espol.edu.ec");
+
+insert into payment_details values(123456789,"Fabrizzio Ontaneda","2025-10-20","visa");
+
+insert into cart_items (user_email, product_id, cart_id) values ("faontane@espol.edu.ec",1,1);
+insert into cart_items (user_email, product_id, cart_id) values ("faontane@espol.edu.ec",5,1);
+insert into cart_items (user_email, product_id, cart_id) values ("faontane@espol.edu.ec",6,1);
+
+
+insert into orders (user_email,country,city,street,date,total,card_number) values("faontane@espol.edu.ec","Ecuador","Guayaquil","xd","2022-01-10",315.63,123456789);
+insert into orders (user_email,country,city,street,date,total,card_number) values("faontane@espol.edu.ec","Ecuador","Guayaquil","xd","2022-01-15",185.48,123456789);
+insert into orders (user_email,country,city,street,date,total,card_number) values("faontane@espol.edu.ec","Ecuador","Guayaquil","xd","2022-01-20",425.94,123456789);
+
+insert into order_items(product_id,order_id,quantity) values(1,1,1);
+insert into order_items(product_id,order_id,quantity) values(5,1,5);
+insert into order_items(product_id,order_id,quantity) values(7,1,4);
+
+insert into order_items(product_id,order_id,quantity) values(5,2,2);
+insert into order_items(product_id,order_id,quantity) values(6,2,1);
+insert into order_items(product_id,order_id,quantity) values(1,2,3);
+
+insert into order_items(product_id,order_id,quantity) values(5,3,2);
+insert into order_items(product_id,order_id,quantity) values(7,3,4);
+insert into order_items(product_id,order_id,quantity) values(6,3,4);

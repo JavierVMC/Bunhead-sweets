@@ -1,21 +1,21 @@
-var express = require("express");
-var bcrypt = require("bcrypt");
+var express = require('express');
+var bcrypt = require('bcrypt');
 
-const sequelize = require("../models/index.js").sequelize;
-var initModels = require("../models/init-models");
+const sequelize = require('../models/index.js').sequelize;
+var initModels = require('../models/init-models');
 var models = initModels(sequelize);
 
 var router = express.Router();
 
-router.post("/login", function (req, res, next) {
+router.post('/login', function (req, res, next) {
   const user_email = req.body.user_email;
   const password = req.body.password;
 
   models.users
     .findAll({
       where: {
-        user_email: user_email,
-      },
+        user_email: user_email
+      }
     })
     .then((users) => {
       const user = users[0];
@@ -23,25 +23,32 @@ router.post("/login", function (req, res, next) {
         bcrypt.compare(password, user.password, function (err, result) {
           if (err) {
             res.json({
-              error: err,
+              error: err
             });
           }
           if (result) {
-            req.session.usuario = user;
+            req.session.profile = users;
             res.status(200).json(user);
           } else {
             req.session = null;
             res.status(200).json({
-              message: "Password does not match",
+              message: 'Password does not match'
             });
           }
         });
       } else {
         res.json({
-          message: "No user found",
+          message: 'No user found'
         });
       }
     });
+});
+
+router.get('/logout', function (req, res, next) {
+  req.session.destroy(function (err) {
+    console.log('Destroyed session');
+  });
+  res.send({ message: 'Logout' });
 });
 
 module.exports = router;

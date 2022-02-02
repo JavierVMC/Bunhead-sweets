@@ -20,18 +20,13 @@ router.get('/:title', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const products_sold = [];
-  req.body.products_sold.forEach((product) => {
-    products_sold.push(product);
-  });
-
   const newReport = new Report({
     title: req.body.title,
     date: Date.now(),
     from: req.body.from,
     to: req.body.to,
     total_incomes: req.body.total_incomes,
-    products_sold: products_sold
+    products_sold: req.body.products_sold
   });
   newReport
     .save()

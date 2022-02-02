@@ -30,3 +30,9 @@
   display: flex;
   align-items: center;
 }
+
+#report-creator-container span {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 3rem;
+}

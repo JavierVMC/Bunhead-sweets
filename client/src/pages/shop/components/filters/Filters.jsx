@@ -16,20 +16,20 @@ export const Filters = () => {
           <Checkbox label="Torta" filterType="Category"></Checkbox>
         </li>
         <li>
-          <Checkbox label="Galletas" filterType="Category"></Checkbox>
+          <Checkbox label="Galleta" filterType="Category"></Checkbox>
         </li>
         <li>
           <Checkbox label="Cupcake" filterType="Category"></Checkbox>
         </li>
         <li>
-          <Checkbox label="Panes" filterType="Category"></Checkbox>
+          <Checkbox label="Brownie" filterType="Category"></Checkbox>
         </li>
       </ul>
       <span className="text-left">Ordenar por</span>
       <ul>
-        <li>
+        {/* <li>
           <Checkbox label="Categoria" filterType="Sorter"></Checkbox>
-        </li>
+        </li> */}
         <li>
           <Checkbox label="Precio mas alto" filterType="Sorter"></Checkbox>
         </li>
