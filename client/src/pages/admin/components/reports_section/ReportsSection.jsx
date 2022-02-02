@@ -8,12 +8,14 @@ export const ReportsSection = () => {
     <div id="reports-section-admin">
       <ReportCreator></ReportCreator>
       <h1>Reportes de ventas generados</h1>
-      <ResourceLoader
-        resourceUrl="http://localhost:3001/api/report"
-        resourceName="reportsList"
-      >
-        <ReportsList></ReportsList>
-      </ResourceLoader>
+      <div id="reports-container">
+        <ResourceLoader
+          resourceUrl="http://localhost:3001/api/report"
+          resourceName="reportsList"
+        >
+          <ReportsList></ReportsList>
+        </ResourceLoader>
+      </div>
     </div>
   );
 };

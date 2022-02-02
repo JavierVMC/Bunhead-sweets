@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { SalesReport } from '../../../../../../components/sales_report/SalesReport';
 
 import './reportCreator.css';
 
