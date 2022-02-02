@@ -73,6 +73,7 @@ const NavBar = ({ userIsLogin, onUserLogin, currentUser, onCurrentUser }) => {
                     <button
                       id="loginButton"
                       onClick={() => {
+                        fetch('http://localhost:3001/api/auth/logout');
                         onUserLogin(false);
                         onCurrentUser({
                           user_email: 'Cargando...',

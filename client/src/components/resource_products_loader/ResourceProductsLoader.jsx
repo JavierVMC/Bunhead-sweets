@@ -11,16 +11,22 @@ const ResourceProductsLoader = ({
   const [state, setState] = useState(null);
   useEffect(() => {
     (async () => {
-      const response = await fetch(resourceUrl);
+      const response = await fetch('http://localhost:3001/api/product');
       const data = await response.json();
 
       let productsFiltered = [];
 
       if (categoryFilters != null && categoryFilters.length > 0) {
         for (let i = 0; i < categoryFilters.length; i++) {
-          productsFiltered = data.filter(
-            (product) => product.category === categoryFilters[i]
-          );
+          for (let product of data) {
+            const response2 = await fetch(
+              `http://localhost:3001/api/product_category/${product.category_id}`
+            );
+            const data2 = await response2.json();
+            if (data2.name === categoryFilters[i]) {
+              productsFiltered.push(product);
+            }
+          }
         }
       } else {
         productsFiltered = data;
@@ -56,17 +62,32 @@ const ResourceProductsLoader = ({
               return a === b ? 0 : a > b ? 1 : -1;
             });
           }
-          // sort by category A-Z
-          if (sorterFilters[i] === 'Categoria') {
-            productsFiltered.sort((x, y) => {
-              let a = x.category.toUpperCase(),
-                b = y.category.toUpperCase();
-              return a === b ? 0 : a > b ? 1 : -1;
-            });
-          }
+          // // sort by category A-Z
+          // if (sorterFilters[i] === 'Categoria') {
+          //   productsFiltered.sort(async (x, y) => {
+          //     const response3 = await fetch(
+          //       `http://localhost:3001/api/product_category/${x.category_id}`
+          //     );
+          //     const data3 = await response3.json();
+
+          //     const response4 = await fetch(
+          //       `http://localhost:3001/api/product_category/${y.category_id}`
+          //     );
+          //     const data4 = await response4.json();
+
+          //     console.log(data3.name);
+          //     console.log(data4.name);
+          //     let a = data3.name.toUpperCase();
+          //     let b = data4.name.toUpperCase();
+          //     return a === b ? 0 : a > b ? 1 : -1;
+          //   });
+          //   console.log(productsFiltered);
+          // }
         }
       }
 
+      console.log('data filtered');
+      console.log(productsFiltered);
       setState(productsFiltered);
     })();
   }, [resourceUrl, categoryFilters, sorterFilters]);
@@ -83,8 +104,8 @@ const ResourceProductsLoader = ({
 };
 
 const mapStateToProps = (state) => ({
-  categoryFilters: state.categoryFilters,
-  sorterFilters: state.sorterFilters
+  categoryFilters: state.filtersR.categoryFilters,
+  sorterFilters: state.filtersR.sorterFilters
 });
 
 export default connect(mapStateToProps)(ResourceProductsLoader);

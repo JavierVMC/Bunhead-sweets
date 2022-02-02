@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userHasLoggedIn, currentUserLogin } from '../../redux/actions/actions';
 import { postData } from '../../utils/rest_api';
+import Axios from 'axios';
 
 import './loginForm.css';
 
