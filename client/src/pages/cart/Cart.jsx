@@ -10,11 +10,11 @@ const Cart = () => {
       <div className="container">
         <div className="cart-splitscreen">
           <SplitScreen leftWeight={4} rightWeight={0.5}>
-            <ResourceLoader resourceUrl="/users.json" resourceName="userslist">
+            <ResourceLoader resourceUrl="" resourceName="userslist">
               <h1>Tu carrito de compra</h1>
               <ShoppingList></ShoppingList>
             </ResourceLoader>
-            <ResourceLoader resourceUrl="/users.json" resourceName="userslist">
+            <ResourceLoader resourceUrl="" resourceName="userslist">
               <Bill id="bill"></Bill>
             </ResourceLoader>
           </SplitScreen>
