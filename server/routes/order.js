@@ -37,7 +37,7 @@ router.get('/:id', function (req, res, next) {
     .catch((error) => console.log(error));
 });
 
-router.get('/report/info', (req, res) => {
+router.post('/report/info', (req, res) => {
   models.order_items.belongsTo(models.orders, {
     foreignKey: 'order_id',
     targetKey: 'id'

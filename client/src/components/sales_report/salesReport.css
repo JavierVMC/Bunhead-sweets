@@ -1,4 +1,5 @@
 .sales-report-container {
+  position: relative;
   color: #000;
   margin-top: 5rem;
   padding: 2rem;
@@ -26,4 +27,14 @@
 }
 .report-incomes {
   font-weight: bold;
+}
+
+.delete-report {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.report-deleted {
+  display: none;
 }

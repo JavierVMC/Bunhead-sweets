@@ -1,4 +1,7 @@
 import './salesReport.css';
+import { FaTrash } from 'react-icons/fa';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export const SalesReport = ({ salesReport }) => {
   const { title, date, from, to, total_incomes, products_sold } =
@@ -11,17 +14,44 @@ export const SalesReport = ({ salesReport }) => {
       products_sold: 'Cargando...'
     };
 
+  const newDate = new Date(date).toLocaleString();
+  const newFrom = new Date(from).toLocaleString();
+  const newTo = new Date(to).toLocaleString();
+
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    if (deleting) {
+      async function deleteReport() {
+        fetch(`http://localhost:3001/api/report/${title}`, {
+          method: 'DELETE'
+        })
+          .then((response) => response.json())
+          .then((data) => console.log(data))
+          .catch((err) => console.log(err));
+      }
+
+      deleteReport();
+    }
+  }, [deleting, title]);
+
   return (
-    <div className="sales-report-container">
+    <div className={deleting ? 'report-deleted' : 'sales-report-container'}>
+      <button
+        className="btn btn-primary delete-report"
+        onClick={() => setDeleting(true)}
+      >
+        <FaTrash></FaTrash>
+      </button>
       <h2>{title}</h2>
       <p>
-        Realizado: <span className="report-dates">{date}</span>
+        Realizado: <span className="report-dates">{newDate}</span>
       </p>
       <p>
-        Desde: <span className="report-dates">{from}</span>
+        Desde: <span className="report-dates">{newFrom}</span>
       </p>
       <p>
-        Hasta: <span className="report-dates">{to}</span>
+        Hasta: <span className="report-dates">{newTo}</span>
       </p>
       <p>
         Total de ingresos:{' '}

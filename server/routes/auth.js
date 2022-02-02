@@ -27,7 +27,7 @@ router.post('/login', function (req, res, next) {
             });
           }
           if (result) {
-            req.session.profile = user;
+            req.session.profile = users;
             res.status(200).json(user);
           } else {
             req.session = null;

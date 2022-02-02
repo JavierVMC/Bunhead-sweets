@@ -5,7 +5,7 @@ var cookieSession = require('cookie-session');
 // Importing express-session module
 const session = require('express-session');
 // Importing file-store module
-const filestore = require('session-file-store')(session);
+const Filestore = require('session-file-store')(session);
 var logger = require('morgan');
 var cors = require('cors');
 
@@ -42,6 +42,7 @@ app.use(
     secret: 'some-secret-example',
     resave: false,
     saveUninitialized: false,
+    store: new Filestore(),
     cookie: {
       secure: false, // This will only work if you have https enabled!
       maxAge: 600000 // 1 min
