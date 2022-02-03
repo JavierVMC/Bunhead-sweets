@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
+import { useState } from 'react';
 import './cartItem.css';
 
 export const CartItem = ({ item }) => {
-  const { name, image, category, price, description } = item || {
+  const { cartItem_id, name, image, category, price, description } = item || {
+    cartItem_id: 'Cargando...',
     name: 'Cargando...',
     image: 'Cargando...',
     category: 'Cargando...',
@@ -10,7 +13,25 @@ export const CartItem = ({ item }) => {
     quantity: 0
   };
 
-  return (
+  const [deleted, setDeleted] = useState(false);
+
+  useEffect(() => {
+    if (deleted) {
+      async function deleteItem(id) {
+        const response = await fetch(
+          `http://localhost:3001/api/cart_items/${id}`,
+          {
+            method: 'DELETE'
+          }
+        );
+        const data = await response.json();
+        console.log(data);
+      }
+      deleteItem(cartItem_id);
+    }
+  }, [deleted]);
+
+  return !deleted ? (
     <li className="product row">
       <div className="col-12 col-md-10">
         <div className="col-12 col-md-4 image-container">
@@ -37,7 +58,11 @@ export const CartItem = ({ item }) => {
             <option value="10">10</option>
           </select>
           {' | '}
-          <button type="button" className="btn btn-link">
+          <button
+            type="button"
+            className="btn btn-link"
+            onClick={() => setDeleted(true)}
+          >
             Eliminar
           </button>
         </div>
@@ -47,5 +72,7 @@ export const CartItem = ({ item }) => {
       </div>
       <hr></hr>
     </li>
+  ) : (
+    ''
   );
 };
