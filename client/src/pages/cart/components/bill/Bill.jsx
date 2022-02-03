@@ -3,22 +3,19 @@ import { BillItem } from '../../../../components/bill_item/BillItem';
 import Button from '@restart/ui/esm/Button';
 import './bill.css';
 
-export const Bill = ({ userslist }) => {
+export const Bill = ({ cartItems }) => {
   let total = 0;
-
-  if (userslist) {
-    userslist[0].cart.map((product) => (total += product.price));
+  
+  if (cartItems) {
+    cartItems.map((product) => (total += product.price));
   }
-  return userslist ? (
+  
+  return cartItems ? (
     <div className="outer-container" id="bill">
       <div className="bill-container">
         <span className="bill-items">Productos</span>
         <ul>
-          <RegularList
-            items={userslist[0].cart}
-            resourceName="billItemInfo"
-            itemComponent={BillItem}
-          ></RegularList>
+          
         </ul>
         <span className="subtotal-container">Subtotal: ${total}</span>
       </div>
