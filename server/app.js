@@ -19,8 +19,10 @@ var reportRouter = require('./routes/report');
 var barChartRouter = require('./routes/bar_chart');
 var pieChartRouter = require('./routes/pie_chart');
 var lineChartRouter = require('./routes/line_chart');
+var cartRouter = require('./routes/cart');
+var cartItemsRouter = require('./routes/cart_item');
 var ordersRouter = require('./routes/order');
-
+var orderItemsRouter = require('./routes/order_item')
 var app = express();
 
 app.use(
@@ -62,6 +64,8 @@ app.use('/api/report', reportRouter);
 app.use('/api/bar_chart', barChartRouter);
 app.use('/api/pie_chart', pieChartRouter);
 app.use('/api/line_chart', lineChartRouter);
+app.use('/api/cart',cartRouter);
+app.use('/api/cart_items',cartItemsRouter);
 app.use('/api/order', ordersRouter);
-
+app.use('/api/order_items',orderItemsRouter);
 module.exports = app;
