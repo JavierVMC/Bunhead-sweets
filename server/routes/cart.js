@@ -81,12 +81,26 @@ router.get('/usercart/:email', (req, res) => {
   // });
   sequelize
     .query(
-      "SELECT B.id,cart_items.id as cartItem_id,B.user_email,products.name,products.image,product_categories.name as category, products.price, products.description from cart_items   INNER JOIN carts as B ON cart_items.cart_id = B.id INNER JOIN products ON products.id = cart_items.product_id inner join product_categories on category_id = product_categories.id where B.user_email ='" +
+      "SELECT products.id as product_id,B.id,cart_items.id as cartItem_id,B.user_email,products.name,products.image,product_categories.name as category, products.price, products.description from cart_items   INNER JOIN carts as B ON cart_items.cart_id = B.id INNER JOIN products ON products.id = cart_items.product_id inner join product_categories on category_id = product_categories.id where B.user_email ='" +
         req.params.email +
         "';"
     )
     .then((cart) => {
-      res.send(cart[0]);
+      const finalCart = [];
+      const finalIds = [];
+      for (let item of cart[0]) {
+        if (!finalIds.includes(item.product_id)) {
+          finalCart.push({
+            ...item,
+            quantity: 1
+          });
+          finalIds.push(item.product_id);
+        } else {
+          const i = finalIds.indexOf(item.product_id);
+          finalCart[i].quantity += 1;
+        }
+      }
+      res.send(finalCart);
     })
     .catch((error) => console.log(error));
 });

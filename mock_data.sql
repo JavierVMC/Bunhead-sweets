@@ -27,6 +27,11 @@ insert into Products (name, category_id, price, description, image, is_available
 insert into Products (name, category_id, price, description, image, is_available) values ('Mix - Cocktail Strawberry Daiquiri', 3, 34.12, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tellus vestibulum, consequat augue vitae, semper est. Donec gravida nisi ac sem consectetur, nec mollis massa hendrerit. Fusce mi mauris, mollis quis quam eu, consequat faucibus nisl. Maecenas nec quam odio. Integer eget accumsan.', 'http://dummyimage.com/166x100.png/ff4444/ffffff', true);
 
 
+INSERT INTO user_payments (user_email,`name`,expiry,network,card_number) values('javavega@espol.edu.ec', 'Javier Vega Molina', '2025-05-10','visa','123456789123456789');
+INSERT INTO user_payments (user_email,`name`,expiry,network,card_number) values('aaalfran@espol.edu.ec', 'Aaron Franco', '2025-05-10','visa','123456789123456789');
+INSERT INTO user_payments (user_email,`name`,expiry,network,card_number) values('faontane@espol.edu.ec', 'Fabrizzio Ontaneda', '2025-05-10','visa','123456789123456789');
+INSERT INTO user_payments (user_email,`name`,expiry,network,card_number) values('natroram@espol.edu.ec', 'Natalia Ramirez', '2025-05-10','visa','123456789123456789');
+
 insert into carts(id,user_email) values(1,"faontane@espol.edu.ec");
 insert into carts(id,user_email) values(2,"javavega@espol.edu.ec");
 insert into carts(id,user_email) values(3,"aaalfran@espol.edu.ec");

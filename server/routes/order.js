@@ -37,6 +37,17 @@ router.get('/:id', function (req, res, next) {
     .catch((error) => console.log(error));
 });
 
+router.get('/user/:email', (req, res) => {
+  models.orders
+    .findAll({
+      where: {
+        user_email: req.params.email
+      }
+    })
+    .then((orders) => res.send(orders.at(-1)))
+    .catch((err) => console.log(err));
+});
+
 router.post('/report/info', (req, res) => {
   models.order_items.belongsTo(models.orders, {
     foreignKey: 'order_id',
@@ -108,7 +119,7 @@ router.post('/', function (req, res, next) {
   const total = req.body.total;
   const card_number = req.body.card_number;
 
-  orders.create({
+  models.orders.create({
     user_email: user_email,
     country: country,
     city: city,

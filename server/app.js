@@ -22,7 +22,10 @@ var lineChartRouter = require('./routes/line_chart');
 var cartRouter = require('./routes/cart');
 var cartItemsRouter = require('./routes/cart_item');
 var ordersRouter = require('./routes/order');
-var orderItemsRouter = require('./routes/order_item')
+var orderItemsRouter = require('./routes/order_item');
+var userPaymentRouter = require('./routes/user_payment');
+var paymentDetailRouter = require('./routes/payment_detail');
+
 var app = express();
 
 app.use(
@@ -64,8 +67,10 @@ app.use('/api/report', reportRouter);
 app.use('/api/bar_chart', barChartRouter);
 app.use('/api/pie_chart', pieChartRouter);
 app.use('/api/line_chart', lineChartRouter);
-app.use('/api/cart',cartRouter);
-app.use('/api/cart_items',cartItemsRouter);
+app.use('/api/cart', cartRouter);
+app.use('/api/cart_items', cartItemsRouter);
 app.use('/api/order', ordersRouter);
-app.use('/api/order_items',orderItemsRouter);
+app.use('/api/order_items', orderItemsRouter);
+app.use('/api/user_payment', userPaymentRouter);
+app.use('/api/payment_detail', paymentDetailRouter);
 module.exports = app;

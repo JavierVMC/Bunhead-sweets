@@ -1,12 +1,12 @@
-var express = require("express");
+var express = require('express');
 var router = express.Router();
 
-const sequelize = require("../models/index.js").sequelize;
-var initModels = require("../models/init-models");
+const sequelize = require('../models/index.js').sequelize;
+var initModels = require('../models/init-models');
 var models = initModels(sequelize);
 
 // GET all
-router.get("/", function (req, res, next) {
+router.get('/', function (req, res, next) {
   models.users
     .findAll({})
     .then((user_payments) => {
@@ -16,15 +16,20 @@ router.get("/", function (req, res, next) {
 });
 
 // GET by id
-router.get("/:id", function (req, res, next) {});
+router.get('/:id', function (req, res, next) {
+  models.user_payments
+    .findOne({ where: { user_email: req.params.id } })
+    .then((user_payment) => res.send(user_payment))
+    .catch((err) => console.log(err));
+});
 
 // POST (agregar nuevo elemento)
-router.post("/", function (req, res, next) {});
+router.post('/', function (req, res, next) {});
 
 // PUT (editar)
-router.put("/:id", function (req, res, next) {});
+router.put('/:id', function (req, res, next) {});
 
 // DELETE
-router.delete("/:id", function (req, res, next) {});
+router.delete('/:id', function (req, res, next) {});
 
 module.exports = router;

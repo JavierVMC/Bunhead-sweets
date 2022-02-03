@@ -3,15 +3,16 @@ import { useState } from 'react';
 import './cartItem.css';
 
 export const CartItem = ({ item }) => {
-  const { cartItem_id, name, image, category, price, description } = item || {
-    cartItem_id: 'Cargando...',
-    name: 'Cargando...',
-    image: 'Cargando...',
-    category: 'Cargando...',
-    price: 'Cargando...',
-    description: 'Cargando...',
-    quantity: 0
-  };
+  const { cartItem_id, name, image, category, price, description, quantity } =
+    item || {
+      cartItem_id: 'Cargando...',
+      name: 'Cargando...',
+      image: 'Cargando...',
+      category: 'Cargando...',
+      price: 'Cargando...',
+      description: 'Cargando...',
+      quantity: 0
+    };
 
   const [deleted, setDeleted] = useState(false);
 
@@ -28,6 +29,7 @@ export const CartItem = ({ item }) => {
         console.log(data);
       }
       deleteItem(cartItem_id);
+      window.location.reload();
     }
   }, [deleted]);
 
@@ -44,7 +46,7 @@ export const CartItem = ({ item }) => {
           <select
             className="form-select"
             aria-label="Default select example"
-            defaultValue="1"
+            defaultValue={quantity}
           >
             <option value="1">1</option>
             <option value="2">2</option>
