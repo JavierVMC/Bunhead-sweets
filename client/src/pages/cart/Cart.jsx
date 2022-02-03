@@ -13,6 +13,7 @@ const Cart = ({currentUser}) => {
           <SplitScreen leftWeight={4} rightWeight={0.5}>
             <ResourceLoader resourceUrl={`http://localhost:3001/api/cart/usercart/${currentUser.user_email}`} resourceName="cartItems">
               <h1>Tu carrito de compra</h1>
+              <br></br>
               <ShoppingList></ShoppingList>
             </ResourceLoader>
             <ResourceLoader resourceUrl={`http://localhost:3001/api/cart/usercart/${currentUser.user_email}`} resourceName="cartItems">
