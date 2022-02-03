@@ -14,8 +14,14 @@
 .bill-container > span{
     font-size: x-large;
     font-weight: bold;
+    display: block;
 }
 
 .bill-container > ul {
     font-size: medium;
+}
+
+#bill-sep{
+    border: 5px solid #FF9292;
+    border-radius: 5px;
 }

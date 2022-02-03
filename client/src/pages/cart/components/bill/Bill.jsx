@@ -14,8 +14,13 @@ export const Bill = ({ cartItems }) => {
     <div className="outer-container" id="bill">
       <div className="bill-container">
         <span className="bill-items">Productos</span>
+        <br></br>
         <ul>
-          
+        <RegularList
+            items={cartItems}
+            resourceName="billItemInfo"
+            itemComponent={BillItem}
+          ></RegularList>
         </ul>
         <span className="subtotal-container">Subtotal: ${total}</span>
       </div>
