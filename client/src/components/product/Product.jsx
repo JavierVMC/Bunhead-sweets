@@ -1,7 +1,8 @@
 import './product.css';
 import { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
-const Product = ({ product }) => {
+const Product = ({ product, currentUser }) => {
   const { id, name, category_id, image, description, price } = product || {
     id: 'Cargando...',
     name: 'Cargando...',
@@ -24,16 +25,60 @@ const Product = ({ product }) => {
   }, [category_id]);
 
   useEffect(() => {
-    async function addToCart(id) {
-      fetch('url de aaron')
-        .then((response) => response.json())
-        .then((data) => {
-          fetch('url de aaron', {
-            method: 'POST',
-            body: JSON.stringify(data)
-          });
-        })
-        .catch((err) => console.log(err));
+    console.log('en el useEffect');
+    if (addedToCart) {
+      async function addToCart(id) {
+        fetch(`http://localhost:3001/api/cart/${currentUser.user_email}`)
+          .then((response) => response.json())
+          .then((cart) => {
+            console.log('fetch raro');
+            console.log(cart);
+            const c = cart[0];
+            fetch('http://localhost:3001/api/cart_items', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                user_email: currentUser.user_email,
+                product_id: id,
+                cart_id: c.id
+              })
+            })
+              .then((reponse) => reponse.json())
+              .then((data) => console.log(data))
+              .catch((err) => console.log(err));
+          })
+          .catch((err) => console.log(err));
+      }
+      addToCart(id);
+    }
+  }, [addedToCart]);
+
+  useEffect(() => {
+    console.log('en el useEffect');
+    if (!addedToCart) {
+      async function addToCart(id) {
+        fetch(`http://localhost:3001/api/cart_items/${currentUser.user_email}`)
+          .then((response) => response.json())
+          .then((cart) => {
+            console.log('fetch raro');
+            console.log(cart);
+            const c = cart[0];
+            fetch('http://localhost:3001/api/cart_items', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                user_email: currentUser.user_email,
+                product_id: id,
+                cart_id: c.id
+              })
+            })
+              .then((reponse) => reponse.json())
+              .then((data) => console.log(data))
+              .catch((err) => console.log(err));
+          })
+          .catch((err) => console.log(err));
+      }
+      addToCart(id);
     }
   }, [addedToCart]);
 
@@ -58,13 +103,7 @@ const Product = ({ product }) => {
             Agregar al carrito
           </button>
         ) : (
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => setAddedToCart(false)}
-          >
-            Sacar del carrito
-          </button>
+          ''
         )}
       </div>
       <hr></hr>
@@ -72,4 +111,8 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+const mapStateToProps = (state) => ({
+  currentUser: state.userR.currentUser
+});
+
+export default connect(mapStateToProps)(Product);

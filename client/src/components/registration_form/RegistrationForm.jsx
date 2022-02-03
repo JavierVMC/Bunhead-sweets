@@ -21,6 +21,19 @@ export const RegistrationForm = () => {
       is_admin: false
     };
 
+    fetch('http://localhost:3001/api/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        user_email: newUser.user_email
+      })
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+
     const users = await getData(
       `http://localhost:3001/api/user/${newUser.user_email}`
     );
