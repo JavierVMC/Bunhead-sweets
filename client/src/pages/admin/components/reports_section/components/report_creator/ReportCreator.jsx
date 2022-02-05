@@ -38,7 +38,7 @@ export const ReportCreator = () => {
                 to: finalDate,
                 ...data
               })
-            });
+            }).then(() => 'recargar');
           })
           .catch((err) => console.log(err));
       }

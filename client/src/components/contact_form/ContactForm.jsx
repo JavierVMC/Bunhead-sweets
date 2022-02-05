@@ -35,6 +35,8 @@ const ContactForm = () => {
     const reset = document.querySelector('#newMessage');
     reset.addEventListener('click', () => {
       boton.classList.remove('button-disabled');
+      boton.disabled = false;
+      boton.innerHTML = 'Enviar';
     });
   };
 

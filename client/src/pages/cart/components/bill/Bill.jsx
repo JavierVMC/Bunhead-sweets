@@ -15,75 +15,75 @@ const Bill = ({ cartItems, currentUser }) => {
 
   const [buying, setBuying] = useState(false);
 
-  useEffect(() => {
-    if (buying) {
-      async function buy() {
-        const response = await fetch(
-          `http://localhost:3001/api/user_payment/${currentUser.user_email}`
-        );
-        const user_payment = await response.json();
+  // useEffect(() => {
+  //   if (buying) {
+  //     async function buy() {
+  //       const response = await fetch(
+  //         `http://localhost:3001/api/user_payment/${currentUser.user_email}`
+  //       );
+  //       const user_payment = await response.json();
 
-        const response5 = await fetch(
-          `http://localhost:3001/api/payment_detail/${user_payment.card_number}`
-        );
-        const existe = await response5.json();
-        console.log(existe);
-        if (!existe.length > 0) {
-          const response1 = await fetch(
-            'http://localhost:3001/api/payment_detail',
-            {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                card_number: user_payment.card_number,
-                name: user_payment.name,
-                expiry: user_payment.expiry,
-                network: user_payment.network
-              })
-            }
-          );
-          await response1.json();
-        }
+  //       const response5 = await fetch(
+  //         `http://localhost:3001/api/payment_detail/${user_payment.card_number}`
+  //       );
+  //       const existe = await response5.json();
+  //       console.log(existe);
+  //       if (!existe.length > 0) {
+  //         const response1 = await fetch(
+  //           'http://localhost:3001/api/payment_detail',
+  //           {
+  //             method: 'POST',
+  //             headers: { 'Content-Type': 'application/json' },
+  //             body: JSON.stringify({
+  //               card_number: user_payment.card_number,
+  //               name: user_payment.name,
+  //               expiry: user_payment.expiry,
+  //               network: user_payment.network
+  //             })
+  //           }
+  //         );
+  //         await response1.json();
+  //       }
 
-        const response2 = await fetch('http://localhost:3001/api/order', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            user_email: currentUser.user_email,
-            country: currentUser.country,
-            city: currentUser.city,
-            street: currentUser.street,
-            date: new Date(),
-            total: total,
-            card_number: user_payment.card_number
-          })
-        });
-        await response2.json();
+  //       const response2 = await fetch('http://localhost:3001/api/order', {
+  //         method: 'POST',
+  //         headers: { 'Content-Type': 'application/json' },
+  //         body: JSON.stringify({
+  //           user_email: currentUser.user_email,
+  //           country: currentUser.country,
+  //           city: currentUser.city,
+  //           street: currentUser.street,
+  //           date: new Date(),
+  //           total: total,
+  //           card_number: user_payment.card_number
+  //         })
+  //       });
+  //       await response2.json();
 
-        const response3 = await fetch(
-          `http://localhost:3001/api/order/user/${currentUser.user_email}`
-        );
-        const thisOrder = await response3.json();
+  //       const response3 = await fetch(
+  //         `http://localhost:3001/api/order/user/${currentUser.user_email}`
+  //       );
+  //       const thisOrder = await response3.json();
 
-        cartItems.forEach(async (item) => {
-          const response = await fetch(
-            'http://localhost:3001/api/order_items',
-            {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                product_id: item.product_id,
-                order_id: thisOrder.id,
-                quantity: item.quantity
-              })
-            }
-          );
-          await response.json();
-        });
-      }
-      buy();
-    }
-  }, [buying]);
+  //       cartItems.forEach(async (item) => {
+  //         const response = await fetch(
+  //           'http://localhost:3001/api/order_items',
+  //           {
+  //             method: 'POST',
+  //             headers: { 'Content-Type': 'application/json' },
+  //             body: JSON.stringify({
+  //               product_id: item.product_id,
+  //               order_id: thisOrder.id,
+  //               quantity: item.quantity
+  //             })
+  //           }
+  //         );
+  //         await response.json();
+  //       });
+  //     }
+  //     buy();
+  //   }
+  // }, [buying]);
 
   return cartItems ? (
     <div className="outer-container" id="bill">

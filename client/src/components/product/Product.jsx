@@ -1,6 +1,7 @@
 import './product.css';
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { getImage } from '../../utils/rest_api.js';
 
 const Product = ({ product, currentUser }) => {
   const { id, name, category_id, image, description, price } = product || {
@@ -13,6 +14,21 @@ const Product = ({ product, currentUser }) => {
   };
   const [categoryName, setCategoryName] = useState(category_id);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [productImage, setProductImage] = useState('');
+
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const [response, error] = await getImage(
+        `http://localhost:3001/api/image/${image}`
+      );
+      if (error) console.log(error);
+      else {
+        setProductImage(response);
+      }
+    }
+    fetchData();
+  }, [image]);
 
   useEffect(() => {
     async function getCategoryName() {
@@ -85,7 +101,7 @@ const Product = ({ product, currentUser }) => {
   return (
     <li className="product row">
       <div className="col-12 col-md-3">
-        <img src={image} alt={name}></img>
+        <img src={productImage} alt={name}></img>
       </div>
       <div className="text-align-left col-12 col-md-7">
         <h2 className="h2">{name}</h2>
@@ -94,7 +110,7 @@ const Product = ({ product, currentUser }) => {
         <p>{description}</p>
       </div>
       <div className="col-12 col-md-2">
-        {!addedToCart ? (
+        {!addedToCart && !currentUser.is_admin ? (
           <button
             type="button"
             className="btn btn-primary"

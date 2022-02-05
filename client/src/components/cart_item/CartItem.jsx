@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { getImage } from '../../utils/rest_api';
 import './cartItem.css';
 
 export const CartItem = ({ item }) => {
@@ -15,7 +16,21 @@ export const CartItem = ({ item }) => {
     };
 
   const [deleted, setDeleted] = useState(false);
+  const [productImage, setProductImage] = useState('');
 
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const [response, error] = await getImage(
+        `http://localhost:3001/api/image/${image}`
+      );
+      if (error) console.log(error);
+      else {
+        setProductImage(response);
+      }
+    }
+    fetchData();
+  }, [image]);
   useEffect(() => {
     if (deleted) {
       async function deleteItem(id) {
@@ -37,7 +52,7 @@ export const CartItem = ({ item }) => {
     <li className="product row">
       <div className="col-12 col-md-10">
         <div className="col-12 col-md-4 image-container">
-          <img src={image} alt={name}></img>
+          <img src={productImage} alt={name}></img>
         </div>
         <div className="text-align-left col-12 col-md-8">
           <h2 className="h2">{name}</h2>

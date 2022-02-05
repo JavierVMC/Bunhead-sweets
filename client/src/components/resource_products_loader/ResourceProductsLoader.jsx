@@ -11,7 +11,9 @@ const ResourceProductsLoader = ({
   const [state, setState] = useState(null);
   useEffect(() => {
     (async () => {
-      const response = await fetch('http://localhost:3001/api/product');
+      const response = await fetch(
+        'http://localhost:3001/api/product/is_available'
+      );
       const data = await response.json();
 
       let productsFiltered = [];

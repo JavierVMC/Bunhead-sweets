@@ -62,12 +62,18 @@ const NavBar = ({ userIsLogin, onUserLogin, currentUser, onCurrentUser }) => {
                 ) : (
                   ''
                 )}
-                <li>
-                  <Link to="/usuario">Perfil</Link>
-                </li>
-                <li>
-                  <Link to="/carrito">Carrito</Link>
-                </li>{' '}
+                {!currentUser.is_admin ? (
+                  <>
+                    <li>
+                      <Link to="/usuario">Perfil</Link>
+                    </li>
+                    <li>
+                      <Link to="/carrito">Carrito</Link>
+                    </li>{' '}
+                  </>
+                ) : (
+                  ''
+                )}
                 <li className="sinEfecto">
                   <Link to="/">
                     <button

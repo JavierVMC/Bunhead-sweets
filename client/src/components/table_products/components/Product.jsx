@@ -72,7 +72,9 @@ export const Product = ({ product }) => {
         is_available: newIsAvailable
       });
       setEditing(false);
-
+      console.log('availables');
+      console.log(newIsAvailable);
+      console.log(isAvailable);
       async function updateProductInfo() {
         fetch(`http://localhost:3001/api/product/${id}`, {
           method: 'PUT',
@@ -85,7 +87,7 @@ export const Product = ({ product }) => {
             description: description,
             price: parseFloat(price),
             image: image,
-            is_available: isAvailable
+            is_available: newIsAvailable
           })
         })
           .then((response) => response.json())
